@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StartScreenActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginLeft="32dp"
+                android:paddingRight="32dp"
+                android:paddingLeft="32dp"
+                android:paddingBottom="32dp"
+                android:layout_marginRight="32dp"
+                android:src="@drawable/logo" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Virtual Class Room"
+                android:gravity="center"
+                android:textSize="36sp"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginBottom="32dp"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/style_button"
+                android:layout_marginTop="32dp"
+                android:text="Login As Teacher" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/style_button"
+                android:layout_marginTop="16dp"
+                android:text="Login As Student" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Terms and Conditions"
+        android:textColor="@color/colorAccent"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
