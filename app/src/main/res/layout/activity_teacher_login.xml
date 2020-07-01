@@ -60,16 +60,12 @@
                 android:textColor="@color/colorPrimary" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnLoginLogin"
+                android:id="@+id/btnLogin_TeacherLoginActivity"
                 style="@style/style_button"
-                android:layout_marginTop="32dp"
+                android:onClick="onBtnLogin_TeacherLoginActivityClicked"
+                android:layout_marginTop="64dp"
                 android:text="Login" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnSignUpLogin"
-                style="@style/style_button"
-                android:layout_marginTop="16dp"
-                android:text="SignUp" />
 
         </LinearLayout>
 
