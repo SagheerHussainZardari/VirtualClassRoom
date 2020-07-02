@@ -1,9 +1,9 @@
 package com.sagheerhussainzardari.virtualclassroom.StudentFiles
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import com.sagheerhussainzardari.easyandroid.showToastShort
+import androidx.appcompat.app.AppCompatActivity
 import com.sagheerhussainzardari.virtualclassroom.R
 
 class StudentLoginActivity : AppCompatActivity() {
@@ -15,6 +15,6 @@ class StudentLoginActivity : AppCompatActivity() {
     }
 
     fun onBtnLogin_StudentLoginActivityClicked(view: View) {
-        showToastShort("On Login Student")
+        startActivity(Intent(this, StudentHomeActivity::class.java))
     }
 }
