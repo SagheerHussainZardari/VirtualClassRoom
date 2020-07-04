@@ -10,7 +10,21 @@
         android:id="@+id/nav_studenthomefragment"
         android:name="com.sagheerhussainzardari.virtualclassroom.StudentFiles.StudentFragments.StudentHomeFragment"
         android:label="Home"
-        tools:layout="@layout/fragment_student_home" />
+        tools:layout="@layout/fragment_student_home">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_studentlogoutfragment"
+        android:name="com.sagheerhussainzardari.virtualclassroom.StudentFiles.StudentFragments.StudentLogoutFragment"
+        android:label="Logout"
+        tools:layout="@layout/fragment_student_logout" />
+
+    <fragment
+        android:id="@+id/nav_studentCheckForClassesFragment"
+        android:name="com.sagheerhussainzardari.virtualclassroom.StudentFiles.StudentFragments.StudentCheckForClassesFragment"
+        android:label="Currently Scheduled Classes"
+        tools:layout="@layout/fragment_student_check_for_classes" />
 
 
 </navigation>

@@ -22,7 +22,6 @@ class TeacherHomeActivity : AppCompatActivity() {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout_teacher)
         val navView: NavigationView = findViewById(R.id.nav_view_teacher)
         val navController = findNavController(R.id.nav_host_fragment_teacher)

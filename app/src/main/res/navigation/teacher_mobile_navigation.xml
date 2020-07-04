@@ -11,6 +11,11 @@
         android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherFragments.TeacherHomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_teacher_home" />
+    <fragment
+        android:id="@+id/nav_teacherlogoutfragment"
+        android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherFragments.TeacherLogoutFragment"
+        android:label="Logout"
+        tools:layout="@layout/fragment_teacher_logout" />
 
 
 </navigation>
