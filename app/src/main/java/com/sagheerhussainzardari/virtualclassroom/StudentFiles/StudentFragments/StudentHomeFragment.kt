@@ -25,9 +25,10 @@ class StudentHomeFragment : Fragment() {
 
 
         card_checkForClasses_StudentHomeFragment.setOnClickListener {
-
             (activity as StudentHomeActivity).openFragment(StudentCheckForClassesFragment())
         }
 
     }
+
+
 }

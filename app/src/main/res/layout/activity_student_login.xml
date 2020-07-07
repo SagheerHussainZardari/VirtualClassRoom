@@ -102,5 +102,10 @@
 
     </ScrollView>
 
+    <include
+        android:id="@+id/pb_studentLoginActvity"
+        layout="@layout/progressbar_layout"
+        android:visibility="gone" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

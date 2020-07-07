@@ -17,13 +17,17 @@ class StartScreenActivity : AppCompatActivity() {
     }
 
     fun onLoginAsStudentClicked(view: View) {
-        startActivity(Intent(this , StudentLoginActivity::class.java))
+        startActivity(Intent(this, StudentLoginActivity::class.java))
     }
+
     fun onLoginAsTeacherClicked(view: View) {
-        startActivity(Intent(this , TeacherLoginActivity::class.java))
+        startActivity(Intent(this, TeacherLoginActivity::class.java))
     }
 
     fun onTermsAndConditionsClicked(view: View) {}
 
 
+    override fun onBackPressed() {
+        finishAffinity()
+    }
 }

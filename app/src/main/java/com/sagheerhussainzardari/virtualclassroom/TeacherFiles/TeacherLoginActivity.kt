@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.sagheerhussainzardari.virtualclassroom.R
+import com.sagheerhussainzardari.virtualclassroom.StartScreenActivity
 
 class TeacherLoginActivity : AppCompatActivity() {
 
@@ -17,5 +18,9 @@ class TeacherLoginActivity : AppCompatActivity() {
     fun onBtnLogin_TeacherLoginActivityClicked(view: View) {
         startActivity(Intent(this, TeacherHomeActivity::class.java))
 
+    }
+
+    override fun onBackPressed() {
+        startActivity(Intent(this, StartScreenActivity::class.java))
     }
 }
