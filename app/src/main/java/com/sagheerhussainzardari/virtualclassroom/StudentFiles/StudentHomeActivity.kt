@@ -1,5 +1,6 @@
 package com.sagheerhussainzardari.virtualclassroom.StudentFiles
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -13,8 +14,8 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
-import com.sagheerhussainzardari.easyandroid.showToastShort
 import com.sagheerhussainzardari.virtualclassroom.R
+import kotlinx.android.synthetic.main.nav_header_student.view.*
 
 class StudentHomeActivity : AppCompatActivity() {
 
@@ -22,6 +23,7 @@ class StudentHomeActivity : AppCompatActivity() {
 
     companion object {
         var mAuth = FirebaseAuth.getInstance()
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +40,24 @@ class StudentHomeActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(setOf(R.id.nav_studenthomefragment), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+
+        setUpUserDetails()
+
+    }
+
+    private fun setUpUserDetails() {
+        val navView: NavigationView = findViewById(R.id.nav_view)
+
+        val sp = getSharedPreferences("LoginInfo", Context.MODE_PRIVATE)
+
+        val studentRollNumber = sp.getString("studentRollNumber", "")
+
+
+
+        navView.getHeaderView(0).tv_studentRollNumber.text = studentRollNumber
+
+        //setUp User Details Here
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -52,19 +72,25 @@ class StudentHomeActivity : AppCompatActivity() {
 
     fun logout() {
         mAuth.signOut()
+
+        val sp = getSharedPreferences("LoginInfo", Context.MODE_PRIVATE)
+        val edit = sp.edit()
+        edit.putBoolean("isAnyBodyLoggedIn", false)
+        edit.apply()
+
         startActivity(Intent(this, StudentLoginActivity::class.java))
     }
 
 
     override fun onBackPressed() {
+
         val navController = findNavController(R.id.nav_host_fragment)
 
         if (navController.currentDestination!!.id != R.id.nav_studenthomefragment) {
             super.onBackPressed()
         } else {
-            showToastShort("Current Directory is Home")
+            finishAffinity()
         }
     }
-
 
 }

@@ -1,5 +1,6 @@
 package com.sagheerhussainzardari.virtualclassroom.StudentFiles
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -49,17 +50,28 @@ class StudentLoginActivity : AppCompatActivity(), AuthCallBack, RealtimeDatabase
         pb_studentLoginActvity.hide()
     }
     override fun onDataGetSuccess(snapshot: DataSnapshot) {
-        val email = et_email_loginStudent.text.toString().substringBefore('@')
+        val email = et_email_loginStudent.text.toString().substringBefore('@').toLowerCase()
         var isStudent = false
-
+        var studentRollNumber = ""
         for (document in snapshot.children) {
-            if (document.value == email) {
+            if (document.value.toString().toLowerCase() == email) {
                 isStudent = true
+                studentRollNumber = document.key.toString()
             }
         }
 
         if (isStudent) {
             pb_studentLoginActvity.hide()
+
+            val sp = getSharedPreferences("LoginInfo", Context.MODE_PRIVATE)
+            val edit = sp.edit()
+
+            edit.putBoolean("isAnyBodyLoggedIn", true)
+            edit.putInt("accountType", 1)
+            edit.putString("studentRollNumber", studentRollNumber)
+            edit.putString("studentEmail", et_email_loginStudent.text.toString().toLowerCase())
+            edit.apply()
+
             startActivity(Intent(this, StudentHomeActivity::class.java))
         } else {
             pb_studentLoginActvity.hide()
