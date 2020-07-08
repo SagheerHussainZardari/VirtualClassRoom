@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
+import com.sagheerhussainzardari.easyandroid.hide
+import com.sagheerhussainzardari.easyandroid.show
 import com.sagheerhussainzardari.easyandroid.showToastLong
 import com.sagheerhussainzardari.virtualclassroom.DBRef_Teachers
 import com.sagheerhussainzardari.virtualclassroom.R
@@ -36,6 +38,7 @@ class TeacherHomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        pb_teachersClasses.show()
         getClassesList()
 
     }
@@ -45,7 +48,9 @@ class TeacherHomeFragment : Fragment() {
             .child(TeacherHomeActivity.teacherEmail.substringBefore('@').toLowerCase())
             .child("classes")
             .addListenerForSingleValueEvent(object : ValueEventListener {
-                override fun onCancelled(error: DatabaseError) {}
+                override fun onCancelled(error: DatabaseError) {
+                    pb_teachersClasses.hide()
+                }
 
                 override fun onDataChange(snapshot: DataSnapshot) {
                     onDataGetSuccess(snapshot)
@@ -96,6 +101,7 @@ class TeacherHomeFragment : Fragment() {
             setUpRecyclerView()
 
         } else {
+            pb_teachersClasses.hide()
             context?.showToastLong("You Have No Classes To Teach")
         }
     }
@@ -107,5 +113,7 @@ class TeacherHomeFragment : Fragment() {
             requireContext(),
             classesTaughtByThisTeacherList
         )
+
+        pb_teachersClasses.hide()
     }
 }

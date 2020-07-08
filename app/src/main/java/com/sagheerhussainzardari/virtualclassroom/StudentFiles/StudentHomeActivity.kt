@@ -47,7 +47,12 @@ class StudentHomeActivity : AppCompatActivity() {
         val navView: NavigationView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment)
 
-        appBarConfiguration = AppBarConfiguration(setOf(R.id.nav_studenthomefragment), drawerLayout)
+        appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.nav_studenthomefragment,
+                R.id.nav_studentCheckForClassesFragment
+            ), drawerLayout
+        )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 

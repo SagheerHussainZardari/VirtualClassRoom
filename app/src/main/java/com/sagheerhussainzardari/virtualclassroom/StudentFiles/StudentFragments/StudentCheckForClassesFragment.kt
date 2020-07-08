@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
+import com.sagheerhussainzardari.easyandroid.showToastLong
 import com.sagheerhussainzardari.virtualclassroom.DBRef_ScheduledClasses
 import com.sagheerhussainzardari.virtualclassroom.R
 import com.sagheerhussainzardari.virtualclassroom.StudentFiles.Adapters.CurrentClassesAdapter
@@ -54,23 +55,29 @@ class StudentCheckForClassesFragment : Fragment() {
     }
 
     private fun onDataGetSuccess(snapshot: DataSnapshot) {
-        currentClasses.clear()
 
-        for (classs in snapshot.children) {
-            currentClasses.add(
-                CurrentClassModel(
-                    classs.child("classSubject").value.toString(),
-                    classs.child("classTeacher").value.toString(),
-                    classs.child("classTime").value.toString(),
-                    classs.child("classDate").value.toString(),
-                    classs.child("classZoomID").value.toString(),
-                    classs.child("classZoomPassword").value.toString(),
-                    classs.child("classZoomLink").value.toString()
+        if (snapshot.hasChildren()) {
+            currentClasses.clear()
+
+            for (classs in snapshot.children) {
+                currentClasses.add(
+                    CurrentClassModel(
+                        classs.child("classSubject").value.toString(),
+                        classs.child("classTeacher").value.toString(),
+                        classs.child("classTime").value.toString(),
+                        classs.child("classDate").value.toString(),
+                        classs.child("classZoomID").value.toString(),
+                        classs.child("classZoomPassword").value.toString(),
+                        classs.child("classZoomLink").value.toString()
+                    )
                 )
-            )
-        }
+            }
 
-        setUpRecyclerView()
+            setUpRecyclerView()
+
+        } else {
+            context?.showToastLong("You Have No Classes Yet")
+        }
 
     }
 

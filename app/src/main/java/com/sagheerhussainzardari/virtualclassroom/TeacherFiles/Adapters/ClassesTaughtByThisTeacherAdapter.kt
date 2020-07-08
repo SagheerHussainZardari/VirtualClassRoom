@@ -29,6 +29,9 @@ public class ClassesTaughtByThisTeacherAdapter(
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.view.tv_subjectNameTeacherClasses.text = list[position].subjectName
+        holder.view.tv_subjectTimeTeacherClasses.text = list[position].subjectTime
+        holder.view.tv_subjectBatchGroupTeacherClasses.text =
+            list[position].subjectBatch + " - " + list[position].subjectGroup
     }
 
 }
