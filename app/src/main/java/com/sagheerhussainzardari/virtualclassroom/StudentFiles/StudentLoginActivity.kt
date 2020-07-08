@@ -57,7 +57,7 @@ class StudentLoginActivity : AppCompatActivity(), AuthCallBack {
 
     override fun onLoginFailed(failureMessage: String) {
         pb_studentLoginActvity.hide()
-        showToastShort(failureMessage)
+        showToastLong(failureMessage)
     }
 
     override fun onSignUpFailed(failureMessage: String) {}
@@ -69,8 +69,6 @@ class StudentLoginActivity : AppCompatActivity(), AuthCallBack {
 
     fun onDataGetSuccess(snapshot: DataSnapshot) {
 
-        showToastShort(snapshot.toString())
-
         pb_studentLoginActvity.hide()
 
         if (snapshot.hasChildren()) {
@@ -79,9 +77,18 @@ class StudentLoginActivity : AppCompatActivity(), AuthCallBack {
 
             edit.putBoolean("isAnyBodyLoggedIn", true)
             edit.putInt("accountType", 1)
+            //saving current student data in sharedprefrence
             edit.putString("studentRollNumber", snapshot.child("rollNumber").value.toString())
             edit.putString("studentEmail", snapshot.child("email").value.toString())
             edit.putString("studentName", snapshot.child("name").value.toString())
+            edit.putString("studentBatch", snapshot.child("batch").value.toString())
+            edit.putString("studentTime", snapshot.child("time").value.toString())
+            edit.putString("studentDegree", snapshot.child("degree").value.toString())
+            edit.putString("studentDept", snapshot.child("dept").value.toString())
+            edit.putString("studentFaculity", snapshot.child("faculity").value.toString())
+            edit.putString("studentFatherName", snapshot.child("fatherName").value.toString())
+            edit.putString("studentGroup", snapshot.child("group").value.toString())
+
             edit.apply()
 
             startActivity(Intent(this, StudentHomeActivity::class.java))

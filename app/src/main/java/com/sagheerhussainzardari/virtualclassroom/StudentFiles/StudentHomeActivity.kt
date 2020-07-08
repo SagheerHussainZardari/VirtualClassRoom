@@ -23,9 +23,17 @@ class StudentHomeActivity : AppCompatActivity() {
 
     companion object {
         var mAuth = FirebaseAuth.getInstance()
+
         var studentEmail = ""
         var studentRollNumber = ""
         var studentName = ""
+        var studentBatch = ""
+        var studentTime = ""
+        var studentDegree = ""
+        var studentDept = ""
+        var studentFatherName = ""
+        var studentFaculity = ""
+        var studentGroup = ""
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,12 +64,18 @@ class StudentHomeActivity : AppCompatActivity() {
         studentRollNumber = sp.getString("studentRollNumber", "").toString()
         studentEmail = sp.getString("studentEmail", "").toString()
         studentName = sp.getString("studentName", "").toString()
+        studentBatch = sp.getString("studentBatch", "").toString()
+        studentTime = sp.getString("studentTime", "").toString()
+        studentDegree = sp.getString("studentDegree", "").toString()
+        studentDept = sp.getString("studentDept", "").toString()
+        studentFatherName = sp.getString("studentFatherName", "").toString()
+        studentFaculity = sp.getString("studentFaculity", "").toString()
+        studentGroup = sp.getString("studentGroup", "").toString()
 
-        navView.getHeaderView(0).tv_studentRollNumber.text =
-            studentName + " (" + studentRollNumber + ")"
+        //setup name roll and email in header
+        navView.getHeaderView(0).tv_studentRollNumber.text = "$studentName ($studentRollNumber)"
         navView.getHeaderView(0).tv_studentEmail.text = studentEmail
 
-        //setUp User Details Here
     }
 
     override fun onSupportNavigateUp(): Boolean {
