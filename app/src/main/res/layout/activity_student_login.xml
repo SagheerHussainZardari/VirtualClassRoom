@@ -63,6 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="48dp"
                 android:layout_marginTop="4dp"
+                android:onClick="onForgotPassword_StudentLoginAcitivity"
                 android:text="Forgot Password?"
                 android:textColor="@color/colorPrimary" />
 
@@ -104,8 +105,12 @@
 
     <include
         android:id="@+id/pb_studentLoginActvity"
-        layout="@layout/progressbar_layout"
+        layout="@layout/layout_progressbar"
         android:visibility="gone" />
 
+    <include
+        android:id="@+id/layout_forgotpassword"
+        layout="@layout/layout_forgotpassword"
+        android:visibility="gone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:src="@drawable/ic_email"
+                android:tint="@color/colorPrimary" />
+
+            <EditText
+                style="@style/style_edittext"
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/colorPrimary"
+                android:hint="Email" />
+
+            <EditText
+                style="@style/style_edittext"
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/colorPrimary"
+                android:hint="Email" />
+
+            <EditText
+                style="@style/style_edittext"
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/colorPrimary"
+                android:hint="Email" />
+
+            <EditText
+                style="@style/style_edittext"
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/colorPrimary"
+                android:hint="Email" />
+
+            <EditText
+                style="@style/style_edittext"
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/colorPrimary"
+                android:hint="Email" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSignUpSignUp"
+                style="@style/style_button"
+                android:layout_marginTop="32dp"
+                android:text="SignUp"
+                app:cornerRadius="10dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

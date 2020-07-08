@@ -23,7 +23,8 @@ class StudentHomeActivity : AppCompatActivity() {
 
     companion object {
         var mAuth = FirebaseAuth.getInstance()
-
+        var studentEmail = ""
+        var studentRollNumber = ""
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,11 +52,11 @@ class StudentHomeActivity : AppCompatActivity() {
 
         val sp = getSharedPreferences("LoginInfo", Context.MODE_PRIVATE)
 
-        val studentRollNumber = sp.getString("studentRollNumber", "")
-
-
+        studentRollNumber = sp.getString("studentRollNumber", "").toString()
+        studentEmail = sp.getString("studentEmail", "").toString()
 
         navView.getHeaderView(0).tv_studentRollNumber.text = studentRollNumber
+        navView.getHeaderView(0).tv_studentEmail.text = studentEmail
 
         //setUp User Details Here
     }

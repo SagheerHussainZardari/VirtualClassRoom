@@ -14,6 +14,7 @@ import com.sagheerhussainzardari.virtualclassroom.DBRef_Students
 import com.sagheerhussainzardari.virtualclassroom.R
 import com.sagheerhussainzardari.virtualclassroom.StartScreenActivity
 import kotlinx.android.synthetic.main.activity_student_login.*
+import kotlinx.android.synthetic.main.layout_forgotpassword.*
 
 class StudentLoginActivity : AppCompatActivity(), AuthCallBack, RealtimeDatabaseCallBack {
 
@@ -53,6 +54,7 @@ class StudentLoginActivity : AppCompatActivity(), AuthCallBack, RealtimeDatabase
         val email = et_email_loginStudent.text.toString().substringBefore('@').toLowerCase()
         var isStudent = false
         var studentRollNumber = ""
+
         for (document in snapshot.children) {
             if (document.value.toString().toLowerCase() == email) {
                 isStudent = true
@@ -84,9 +86,32 @@ class StudentLoginActivity : AppCompatActivity(), AuthCallBack, RealtimeDatabase
     override fun onDataStoredFailure(failureMessage: String) {}
     override fun onDataStoredSuccess() {}
 
-
     override fun onBackPressed() {
         startActivity(Intent(this, StartScreenActivity::class.java))
+    }
+
+    fun onForgotPassword_StudentLoginAcitivity(view: View) {
+        layout_forgotpassword.show()
+        layout_forgotpassword_View.setOnClickListener {
+            layout_forgotpassword.hide()
+        }
+
+        layout_forgotpassword_LinearLayout.setOnClickListener { }
+
+        btn_resetPassword_forgotpassword.setOnClickListener {
+            if (isEmailValid(et_email_forgotpassword)) {
+                mAuth.sendPasswordResetEmail(et_email_forgotpassword.text.toString())
+                    .addOnCompleteListener {
+                        if (it.isSuccessful) {
+                            showToastLong("Password Reset Link Sent!!\nCheck Your Inbox!")
+                            layout_forgotpassword.hide()
+                        } else {
+                            showToastLong("Password Reset Failed!\n${it.exception!!.localizedMessage}")
+                        }
+                    }
+            }
+        }
+
     }
 
 }
