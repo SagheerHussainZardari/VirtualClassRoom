@@ -15,7 +15,7 @@ import com.sagheerhussainzardari.virtualclassroom.DBRef_Students
 import com.sagheerhussainzardari.virtualclassroom.R
 import com.sagheerhussainzardari.virtualclassroom.StartScreenActivity
 import kotlinx.android.synthetic.main.activity_student_login.*
-import kotlinx.android.synthetic.main.layout_forgotpassword.*
+import kotlinx.android.synthetic.main.layout_forgotpasswordstudent.*
 
 class StudentLoginActivity : AppCompatActivity(), AuthCallBack {
 
@@ -37,12 +37,6 @@ class StudentLoginActivity : AppCompatActivity(), AuthCallBack {
     }
 
 
-    override fun onLoginSuccess() {
-        getStudentDataFromDataBase(
-            et_email_loginStudent.text.toString().substringBefore('@').toLowerCase()
-        )
-    }
-
     private fun getStudentDataFromDataBase(email: String) {
         DBRef_Students.child(email).addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onCancelled(error: DatabaseError) {
@@ -53,6 +47,12 @@ class StudentLoginActivity : AppCompatActivity(), AuthCallBack {
                 onDataGetSuccess(snapshot)
             }
         })
+    }
+
+    override fun onLoginSuccess() {
+        getStudentDataFromDataBase(
+            et_email_loginStudent.text.toString().substringBefore('@').toLowerCase()
+        )
     }
 
     override fun onLoginFailed(failureMessage: String) {

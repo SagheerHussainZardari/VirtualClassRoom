@@ -40,6 +40,7 @@
                 android:layout_marginBottom="64dp" />
 
             <EditText
+                android:id="@+id/et_email_loginTeacher"
                 style="@style/style_edittext"
                 android:drawableStart="@drawable/ic_email"
                 android:drawablePadding="8dp"
@@ -48,6 +49,7 @@
 
             <EditText
                 style="@style/style_edittext"
+                android:id="@+id/et_password_loginTeacher"
                 android:drawableStart="@drawable/ic_password"
                 android:drawablePadding="8dp"
                 android:drawableTint="@color/colorPrimary"
@@ -58,6 +60,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="48dp"
+                android:onClick="onForgotPassword_TeacherLoginAcitivity"
                 android:layout_marginTop="4dp"
                 android:text="Forgot Password?"
                 android:textColor="@color/colorPrimary" />
@@ -96,6 +99,17 @@
         </LinearLayout>
 
     </ScrollView>
+
+
+    <include
+        android:id="@+id/pb_teacherLoginActvity"
+        layout="@layout/layout_progressbar"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/layout_forgotpasswordteacher"
+        layout="@layout/layout_forgotpasswordstudent"
+        android:visibility="gone" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

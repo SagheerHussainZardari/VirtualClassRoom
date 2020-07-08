@@ -110,7 +110,7 @@
 
     <include
         android:id="@+id/layout_forgotpassword"
-        layout="@layout/layout_forgotpassword"
+        layout="@layout/layout_forgotpasswordstudent"
         android:visibility="gone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

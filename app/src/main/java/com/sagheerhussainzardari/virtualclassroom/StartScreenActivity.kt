@@ -5,9 +5,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.sagheerhussainzardari.easyandroid.showToastShort
 import com.sagheerhussainzardari.virtualclassroom.StudentFiles.StudentHomeActivity
 import com.sagheerhussainzardari.virtualclassroom.StudentFiles.StudentLoginActivity
+import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherHomeActivity
 import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherLoginActivity
 
 
@@ -44,7 +44,7 @@ class StartScreenActivity : AppCompatActivity() {
             if (accountType == 1) {
                 startActivity(Intent(this, StudentHomeActivity::class.java))
             } else if (accountType == 0) {
-                showToastShort("Some Teacher Is Logged In")
+                startActivity(Intent(this, TeacherHomeActivity::class.java))
             }
         }
 

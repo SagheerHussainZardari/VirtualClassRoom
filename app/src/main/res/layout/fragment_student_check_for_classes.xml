@@ -6,10 +6,9 @@
     tools:context=".StudentFiles.StudentFragments.StudentCheckForClassesFragment">
 
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_currentClasses"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Check For Classes Fragment" />
-
+        android:layout_height="match_parent" />
 
 </FrameLayout>
