@@ -7,16 +7,17 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
 import com.sagheerhussainzardari.easyandroid.*
 import com.sagheerhussainzardari.easyandroid.CallBacks.AuthCallBack
-import com.sagheerhussainzardari.easyandroid.CallBacks.RealtimeDatabaseCallBack
 import com.sagheerhussainzardari.virtualclassroom.DBRef_Students
 import com.sagheerhussainzardari.virtualclassroom.R
 import com.sagheerhussainzardari.virtualclassroom.StartScreenActivity
 import kotlinx.android.synthetic.main.activity_student_login.*
 import kotlinx.android.synthetic.main.layout_forgotpassword.*
 
-class StudentLoginActivity : AppCompatActivity(), AuthCallBack, RealtimeDatabaseCallBack {
+class StudentLoginActivity : AppCompatActivity(), AuthCallBack {
 
     companion object {
         var mAuth = FirebaseAuth.getInstance()
@@ -37,54 +38,56 @@ class StudentLoginActivity : AppCompatActivity(), AuthCallBack, RealtimeDatabase
 
 
     override fun onLoginSuccess() {
-        //get Students List and Check Is User Exits Or not
-        getDataFromFirebaseRealtimemDatabase(DBRef_Students, this)
+        getStudentDataFromDataBase(
+            et_email_loginStudent.text.toString().substringBefore('@').toLowerCase()
+        )
     }
+
+    private fun getStudentDataFromDataBase(email: String) {
+        DBRef_Students.child(email).addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onCancelled(error: DatabaseError) {
+                onDataGetFailure(error.toString())
+            }
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                onDataGetSuccess(snapshot)
+            }
+        })
+    }
+
     override fun onLoginFailed(failureMessage: String) {
         pb_studentLoginActvity.hide()
         showToastShort(failureMessage)
     }
+
     override fun onSignUpFailed(failureMessage: String) {}
     override fun onSignUpSuccess() {}
-    override fun onDataGetFailure(failureMessage: String) {
+    fun onDataGetFailure(failureMessage: String) {
         showToastShort(failureMessage)
         pb_studentLoginActvity.hide()
     }
-    override fun onDataGetSuccess(snapshot: DataSnapshot) {
-        val email = et_email_loginStudent.text.toString().substringBefore('@').toLowerCase()
-        var isStudent = false
-        var studentRollNumber = ""
 
-        for (document in snapshot.children) {
-            if (document.value.toString().toLowerCase() == email) {
-                isStudent = true
-                studentRollNumber = document.key.toString()
-            }
-        }
+    fun onDataGetSuccess(snapshot: DataSnapshot) {
 
-        if (isStudent) {
-            pb_studentLoginActvity.hide()
+        showToastShort(snapshot.toString())
 
+        pb_studentLoginActvity.hide()
+
+        if (snapshot.hasChildren()) {
             val sp = getSharedPreferences("LoginInfo", Context.MODE_PRIVATE)
             val edit = sp.edit()
 
             edit.putBoolean("isAnyBodyLoggedIn", true)
             edit.putInt("accountType", 1)
-            edit.putString("studentRollNumber", studentRollNumber)
-            edit.putString("studentEmail", et_email_loginStudent.text.toString().toLowerCase())
+            edit.putString("studentRollNumber", snapshot.child("rollNumber").value.toString())
+            edit.putString("studentEmail", snapshot.child("email").value.toString())
+            edit.putString("studentName", snapshot.child("name").value.toString())
             edit.apply()
 
             startActivity(Intent(this, StudentHomeActivity::class.java))
-        } else {
-            pb_studentLoginActvity.hide()
-            mAuth.signOut()
-            showToastShort("You Are Not A Student!")
         }
 
     }
-
-    override fun onDataStoredFailure(failureMessage: String) {}
-    override fun onDataStoredSuccess() {}
 
     override fun onBackPressed() {
         startActivity(Intent(this, StartScreenActivity::class.java))

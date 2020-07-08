@@ -25,6 +25,7 @@ class StudentHomeActivity : AppCompatActivity() {
         var mAuth = FirebaseAuth.getInstance()
         var studentEmail = ""
         var studentRollNumber = ""
+        var studentName = ""
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,8 +55,10 @@ class StudentHomeActivity : AppCompatActivity() {
 
         studentRollNumber = sp.getString("studentRollNumber", "").toString()
         studentEmail = sp.getString("studentEmail", "").toString()
+        studentName = sp.getString("studentName", "").toString()
 
-        navView.getHeaderView(0).tv_studentRollNumber.text = studentRollNumber
+        navView.getHeaderView(0).tv_studentRollNumber.text =
+            studentName + " (" + studentRollNumber + ")"
         navView.getHeaderView(0).tv_studentEmail.text = studentEmail
 
         //setUp User Details Here
