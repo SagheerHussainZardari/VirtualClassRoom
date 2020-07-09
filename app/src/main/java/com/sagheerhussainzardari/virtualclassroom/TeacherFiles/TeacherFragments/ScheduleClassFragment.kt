@@ -12,6 +12,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ValueEventListener
 import com.sagheerhussainzardari.easyandroid.hide
 import com.sagheerhussainzardari.easyandroid.show
+import com.sagheerhussainzardari.easyandroid.showToastLong
 import com.sagheerhussainzardari.easyandroid.showToastShort
 import com.sagheerhussainzardari.virtualclassroom.DBRef_ScheduledClasses
 import com.sagheerhussainzardari.virtualclassroom.R
@@ -119,8 +120,14 @@ class ScheduleClassFragment : Fragment() {
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onCancelled(error: DatabaseError) {}
                 override fun onDataChange(snapshot: DataSnapshot) {
-                    tv_previousClass.text =
-                        snapshot.child("classDate").value.toString() + " => " + snapshot.child("classTime").value.toString()
+                    if (snapshot.hasChildren()) {
+                        tv_previousClass.show()
+                        tv_previousClass.text =
+                            snapshot.child("classDate").value.toString() + " => " + snapshot.child("classTime").value.toString()
+                    } else {
+                        tv_previousClass.hide()
+                        context?.showToastLong("No Class Scheduled Yet!!!")
+                    }
                 }
             })
 
