@@ -7,11 +7,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.sagheerhussainzardari.virtualclassroom.R
 import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Models.ClassesTaughtByThisTeacherModel
+import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherFragments.TeacherHomeFragment
 import kotlinx.android.synthetic.main.layout_recycler_teacherclasses.view.*
 
 public class ClassesTaughtByThisTeacherAdapter(
     var context: Context,
-    var list: ArrayList<ClassesTaughtByThisTeacherModel>
+    var list: ArrayList<ClassesTaughtByThisTeacherModel>,
+    var teacherHomeFragment: TeacherHomeFragment
 ) : RecyclerView.Adapter<ClassesTaughtByThisTeacherAdapter.MyViewHolder>() {
 
     class MyViewHolder(var view: View) : RecyclerView.ViewHolder(view)
@@ -32,6 +34,12 @@ public class ClassesTaughtByThisTeacherAdapter(
         holder.view.tv_subjectTimeTeacherClasses.text = list[position].subjectTime
         holder.view.tv_subjectBatchGroupTeacherClasses.text =
             list[position].subjectBatch + " - " + list[position].subjectGroup
+
+
+        holder.view.card_classTeacherHomeFragment.setOnClickListener {
+            teacherHomeFragment.setCurrentClassSelected(list[position])
+        }
     }
+
 
 }

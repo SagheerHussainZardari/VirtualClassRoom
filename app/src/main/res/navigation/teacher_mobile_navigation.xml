@@ -16,6 +16,11 @@
         android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherFragments.TeacherLogoutFragment"
         android:label="Logout"
         tools:layout="@layout/fragment_teacher_logout" />
+    <fragment
+        android:id="@+id/nav_afterClassSelectedFragment"
+        android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherFragments.AfterClassSelectedFragment"
+        android:label="Class Dashboard"
+        tools:layout="@layout/fragment_teacher_after_class_selected" />
 
 
 </navigation>

@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
+import com.sagheerhussainzardari.easyandroid.hide
+import com.sagheerhussainzardari.easyandroid.show
 import com.sagheerhussainzardari.easyandroid.showToastLong
 import com.sagheerhussainzardari.virtualclassroom.DBRef_ScheduledClasses
 import com.sagheerhussainzardari.virtualclassroom.R
@@ -36,7 +38,7 @@ class StudentCheckForClassesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+        pb_checkForClasses.show()
         DBRef_ScheduledClasses
             .child(StudentHomeActivity.studentFaculity)
             .child(StudentHomeActivity.studentDept)
@@ -45,7 +47,9 @@ class StudentCheckForClassesFragment : Fragment() {
             .child(StudentHomeActivity.studentBatch)
             .child(StudentHomeActivity.studentGroup)
             .addListenerForSingleValueEvent(object : ValueEventListener {
-                override fun onCancelled(error: DatabaseError) {}
+                override fun onCancelled(error: DatabaseError) {
+                    pb_checkForClasses.hide()
+                }
 
                 override fun onDataChange(snapshot: DataSnapshot) {
                     onDataGetSuccess(snapshot)
@@ -76,6 +80,7 @@ class StudentCheckForClassesFragment : Fragment() {
             setUpRecyclerView()
 
         } else {
+            pb_checkForClasses.hide()
             context?.showToastLong("You Have No Classes Yet")
         }
 
@@ -85,6 +90,9 @@ class StudentCheckForClassesFragment : Fragment() {
         rv_currentClasses.setHasFixedSize(true)
         rv_currentClasses.layoutManager = LinearLayoutManager(context)
         rv_currentClasses.adapter = CurrentClassesAdapter(requireContext(), currentClasses)
+
+        pb_checkForClasses.hide()
+
     }
 
 }

@@ -13,6 +13,7 @@ import com.google.firebase.database.ValueEventListener
 import com.sagheerhussainzardari.easyandroid.hide
 import com.sagheerhussainzardari.easyandroid.show
 import com.sagheerhussainzardari.easyandroid.showToastLong
+import com.sagheerhussainzardari.easyandroid.showToastShort
 import com.sagheerhussainzardari.virtualclassroom.DBRef_Teachers
 import com.sagheerhussainzardari.virtualclassroom.R
 import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Adapters.ClassesTaughtByThisTeacherAdapter
@@ -24,7 +25,9 @@ class TeacherHomeFragment : Fragment() {
 
     companion object {
         var classesTaughtByThisTeacherList = ArrayList<ClassesTaughtByThisTeacherModel>()
+        var currentClassSelected: ClassesTaughtByThisTeacherModel? = null
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -105,15 +108,27 @@ class TeacherHomeFragment : Fragment() {
             context?.showToastLong("You Have No Classes To Teach")
         }
     }
-
     private fun setUpRecyclerView() {
         rv_teacherclasses.setHasFixedSize(true)
         rv_teacherclasses.layoutManager = LinearLayoutManager(context)
         rv_teacherclasses.adapter = ClassesTaughtByThisTeacherAdapter(
             requireContext(),
-            classesTaughtByThisTeacherList
+            classesTaughtByThisTeacherList,
+            this
         )
 
         pb_teachersClasses.hide()
     }
+
+
+    fun foo() {
+        context?.showToastShort("reached here")
+    }
+
+    fun setCurrentClassSelected(currentClass: ClassesTaughtByThisTeacherModel) {
+        currentClassSelected = currentClass
+        (activity as TeacherHomeActivity).openFragmentAfterClassSelected()
+    }
+
+
 }

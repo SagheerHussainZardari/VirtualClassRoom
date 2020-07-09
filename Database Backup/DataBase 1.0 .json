@@ -1,0 +1,128 @@
+{
+  "ScheduledClasses": {
+    "Natural Science": {
+      "Computer Science": {
+        "BS": {
+          "Morning": {
+            "2K17": {
+              "PE": {
+                "0": {
+                  "classDate": "12-07-2020",
+                  "classSubject": "Electronics",
+                  "classTeacher": "Dr.Hira Fatima Naqvi",
+                  "classTime": "9:00AM-10:00AM",
+                  "classZoomID": "999-999-999",
+                  "classZoomLink": "link is here",
+                  "classZoomPassword": 123456
+                },
+                "Electronics": {
+                  "classDate": "11-07-2020",
+                  "classSubject": "Electronics",
+                  "classTeacher": "Dr.Yasir Arafat",
+                  "classTime": "9:30AM-10:30AM",
+                  "classZoomID": "786-786-7866",
+                  "classZoomLink": "This is Class Link",
+                  "classZoomPassword": 123456
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "Students": {
+    "bilalshaikh": {
+      "batch": "2K17",
+      "degree": "BS",
+      "dept": "Computer Science",
+      "email": "BilalShaikh@gmail.com",
+      "faculity": "Natural Science",
+      "fatherName": "M.Waseem",
+      "group": "PM",
+      "name": "Bilal Shaikh",
+      "rollNumber": "2K17/CSE/126",
+      "time": "Morning"
+    },
+    "naveerakhan": {
+      "batch": "2K17",
+      "degree": "BS",
+      "dept": "Computer Science",
+      "email": "NaveeraKhan@gmail.com",
+      "faculity": "Natural Science",
+      "fatherName": "Khalil Ur Rehman",
+      "group": "PE",
+      "name": "Naveera Khan",
+      "rollNumber": "2K17/CSE/76",
+      "time": "Morning"
+    },
+    "sagheerhzardari": {
+      "batch": "2K17",
+      "degree": "BS",
+      "dept": "Computer Science",
+      "email": "Sagheerhzardari@gmail.com",
+      "faculity": "Natural Science",
+      "fatherName": "Nazeer Hussain Zardari",
+      "group": "PE",
+      "name": "Sagheer Hussain",
+      "rollNumber": "2K17/CSE/89",
+      "time": "Morning"
+    }
+  },
+  "Teachers": {
+    "hirafatima": {
+      "classes": {
+        "BS": {
+          "Evening": {
+            "2k17": {
+              "PE": {
+                "Electronics": {
+                  "subjectName": "Electronics"
+                }
+              }
+            }
+          },
+          "Morning": {
+            "2k17": {
+              "PE": {
+                "Electronics": {
+                  "subjectName": "Electronics"
+                },
+                "Electronics Practical": {
+                  "subjectName": "Electronics Practical"
+                }
+              },
+              "PM": {
+                "Electronics": {
+                  "subjectName": "Electronics"
+                }
+              }
+            },
+            "2k18": {
+              "PM": {
+                "C-Programming": {
+                  "subjectName": "C-Programming"
+                }
+              }
+            }
+          }
+        },
+        "MCS": {
+          "Morning": {
+            "2k19": {
+              "PE": {
+                "AI": {
+                  "subjectName": "Artificial Inteligence"
+                }
+              }
+            }
+          }
+        }
+      },
+      "dept": "Computer Science",
+      "email": "HiraFatima@gmail.com",
+      "faculty": "Natural Science",
+      "name": "Hira Fatima Naqvi"
+    }
+  }
+}

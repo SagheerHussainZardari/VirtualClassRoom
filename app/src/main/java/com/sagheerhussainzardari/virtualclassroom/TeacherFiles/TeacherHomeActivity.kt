@@ -14,12 +14,16 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.sagheerhussainzardari.virtualclassroom.R
+import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Models.ClassesTaughtByThisTeacherModel
 import kotlinx.android.synthetic.main.nav_header_teacher.view.*
 
 class TeacherHomeActivity : AppCompatActivity() {
 
     companion object {
         var mAuth = FirebaseAuth.getInstance()
+
+        var currentClassSelected: ClassesTaughtByThisTeacherModel? = null
+
         var teacherName = ""
         var teacherEmail = ""
         var teacherFaculty = ""
@@ -38,13 +42,19 @@ class TeacherHomeActivity : AppCompatActivity() {
         val navView: NavigationView = findViewById(R.id.nav_view_teacher)
         val navController = findNavController(R.id.nav_host_fragment_teacher)
 
-        appBarConfiguration = AppBarConfiguration(setOf(R.id.nav_teacherhomefragment), drawerLayout)
+        appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.nav_teacherhomefragment,
+                R.id.nav_afterClassSelectedFragment
+            ), drawerLayout
+        )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
         setUpUserDetails()
 
     }
+
 
 
     private fun setUpUserDetails() {
@@ -77,4 +87,11 @@ class TeacherHomeActivity : AppCompatActivity() {
         edit.apply()
         startActivity(Intent(this, TeacherLoginActivity::class.java))
     }
+
+    fun openFragmentAfterClassSelected() {
+        val navController = findNavController(R.id.nav_host_fragment_teacher)
+        navController.navigate(R.id.nav_afterClassSelectedFragment)
+    }
+
+
 }
