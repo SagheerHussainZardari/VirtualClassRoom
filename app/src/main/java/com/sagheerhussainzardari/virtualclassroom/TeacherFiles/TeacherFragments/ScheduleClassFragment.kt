@@ -10,6 +10,9 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ValueEventListener
+import com.sagheerhussainzardari.easyandroid.hide
+import com.sagheerhussainzardari.easyandroid.show
+import com.sagheerhussainzardari.easyandroid.showToastShort
 import com.sagheerhussainzardari.virtualclassroom.DBRef_ScheduledClasses
 import com.sagheerhussainzardari.virtualclassroom.R
 import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherHomeActivity
@@ -57,6 +60,7 @@ class ScheduleClassFragment : Fragment() {
                     if (Patterns.WEB_URL.matcher(zoomLink).matches()) {
                         if (zoomTime.isNotEmpty()) {
                             if (zoomDate.isNotEmpty()) {
+                                pb_schceduleClass.show()
 
                                 baseRefForStoringClassInformation.child("classDate")
                                     .setValue(zoomDate)
@@ -74,6 +78,16 @@ class ScheduleClassFragment : Fragment() {
                                     .setValue(TeacherHomeFragment.currentClassSelected!!.subjectName)
                                 baseRefForStoringClassInformation.child("classTeacher")
                                     .setValue(TeacherHomeActivity.teacherName)
+                                    .addOnCompleteListener {
+                                        if (it.isSuccessful) {
+                                            context?.showToastShort("Class Scheduled Complete!!!")
+                                            setUpCurrentlyAddedClass()
+                                            pb_schceduleClass.hide()
+                                        } else {
+                                            pb_schceduleClass.hide()
+                                            context?.showToastShort("Class Not Added Something Went Wrong")
+                                        }
+                                    }
 
                             } else {
                                 et_zoomDate.error = "Zoom Date Must Not Be Empty!!!"

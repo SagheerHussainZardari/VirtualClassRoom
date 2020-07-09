@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -23,8 +23,9 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:paddingTop="16dp"
+                android:layout_marginTop="16dp"
                 android:paddingBottom="16dp"
-                android:text="Add Class"
+                android:text="New Class"
                 android:textColor="@color/colorPrimary"
                 android:textSize="28sp"
                 android:textStyle="bold" />
@@ -54,7 +55,7 @@
             <EditText
                 android:id="@+id/et_zoomTime"
                 style="@style/style_edittext_scheduleClass"
-                android:hint="Time: eg 9:00AM-10:00AM"
+                android:hint="Class Time: eg 9:00AM-10:00AM"
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp" />
 
@@ -86,7 +87,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="Add Class"
+                        android:text="Schedule Class"
                         android:textColor="#fff"
                         android:textSize="20sp" />
                 </LinearLayout>
@@ -99,7 +100,7 @@
                 android:layout_marginRight="64dp"
                 android:gravity="center_horizontal"
                 android:lines="2"
-                android:text="Note: Clicking Add Class Will Overide Previous Class"
+                android:text="Note: Clicking Schedule Class Will Overide Previous Class"
                 android:textColor="#FF0000"
                 android:textSize="11sp" />
 
@@ -119,44 +120,31 @@
 
 
             <androidx.cardview.widget.CardView
-                style="@style/style_edittext_scheduleClass"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="12dp"
                 app:cardBackgroundColor="@color/colorPrimaryDark"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="8dp">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="56dp"
-
-                    android:paddingRight="-10dp"
-                    android:weightSum="10">
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp">
 
                     <TextView
                         android:id="@+id/tv_previousClass"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_weight="8"
                         android:ellipsize="end"
                         android:gravity="center_vertical"
                         android:lines="1"
                         android:paddingLeft="12dp"
                         android:paddingRight="12dp"
-                        android:text="12-07-2020 => 9:00AM to 10:00AM"
+                        android:text=""
                         android:textColor="#fff"
                         android:textSize="20sp"
                         android:textStyle="bold|italic" />
-
-                    <ImageButton
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1.75"
-                        android:background="@drawable/gradientback_withroundcorners"
-                        android:clickable="true"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:padding="8dp"
-                        android:src="@drawable/ic_delete" />
-
 
                 </LinearLayout>
 
@@ -166,4 +154,9 @@
         </LinearLayout>
     </ScrollView>
 
-</LinearLayout>
+
+    <include
+        android:id="@+id/pb_schceduleClass"
+        layout="@layout/progressbar_layout"
+        android:visibility="gone" />
+</RelativeLayout>
