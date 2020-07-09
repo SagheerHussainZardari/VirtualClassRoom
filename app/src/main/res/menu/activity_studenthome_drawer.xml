@@ -9,7 +9,7 @@
             <group android:checkableBehavior="single">
 
                 <item
-                    android:id="@+id/nav_studenthomefragment"
+                    android:id="@+id/nav_studentHomeFragment"
                     android:icon="@drawable/ic_email"
                     android:title="Student Home" />
 
@@ -20,7 +20,7 @@
     <item android:title="Others">
         <menu>
             <item
-                android:id="@+id/nav_studentlogoutfragment"
+                android:id="@+id/nav_studentLogoutFragment"
                 android:icon="@drawable/ic_person"
                 android:title="Logout" />
         </menu>

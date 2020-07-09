@@ -3,24 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/teacher_mobile_navigation"
-    app:startDestination="@+id/nav_teacherhomefragment">
+    app:startDestination="@+id/nav_teacherHomeFragment">
 
 
     <fragment
-        android:id="@+id/nav_teacherhomefragment"
+        android:id="@+id/nav_teacherHomeFragment"
         android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherFragments.TeacherHomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_teacher_home" />
     <fragment
-        android:id="@+id/nav_teacherlogoutfragment"
+        android:id="@+id/nav_teacherLogoutFragment"
         android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherFragments.TeacherLogoutFragment"
         android:label="Logout"
         tools:layout="@layout/fragment_teacher_logout" />
     <fragment
-        android:id="@+id/nav_afterClassSelectedFragment"
+        android:id="@+id/nav_teacherAfterClassSelectedFragment"
         android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherFragments.AfterClassSelectedFragment"
         android:label="Class Dashboard"
-        tools:layout="@layout/fragment_teacher_after_class_selected" />
+        tools:layout="@layout/fragment_teacher_afterclassselected" />
+    <fragment
+        android:id="@+id/nav_teacherScheduleClassFragment"
+        android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherFragments.ScheduleClassFragment"
+        android:label="Schedule Next Class"
+        tools:layout="@layout/fragment_teacher_scheduleclass" />
 
 
 </navigation>

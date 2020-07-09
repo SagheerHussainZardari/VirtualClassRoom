@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/student_mobile_navigation"
-    app:startDestination="@+id/nav_studenthomefragment">
+    app:startDestination="@+id/nav_studentHomeFragment">
 
 
     <fragment
-        android:id="@+id/nav_studenthomefragment"
+        android:id="@+id/nav_studentHomeFragment"
         android:name="com.sagheerhussainzardari.virtualclassroom.StudentFiles.StudentFragments.StudentHomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_student_home">
@@ -15,7 +15,7 @@
     </fragment>
 
     <fragment
-        android:id="@+id/nav_studentlogoutfragment"
+        android:id="@+id/nav_studentLogoutFragment"
         android:name="com.sagheerhussainzardari.virtualclassroom.StudentFiles.StudentFragments.StudentLogoutFragment"
         android:label="Logout"
         tools:layout="@layout/fragment_student_logout" />
@@ -24,7 +24,7 @@
         android:id="@+id/nav_studentCheckForClassesFragment"
         android:name="com.sagheerhussainzardari.virtualclassroom.StudentFiles.StudentFragments.StudentCheckForClassesFragment"
         android:label="Currently Scheduled Classes"
-        tools:layout="@layout/fragment_student_check_for_classes" />
+        tools:layout="@layout/fragment_student_checkforclasses" />
 
 
 </navigation>

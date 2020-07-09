@@ -44,8 +44,9 @@ class TeacherHomeActivity : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_teacherhomefragment,
-                R.id.nav_afterClassSelectedFragment
+                R.id.nav_teacherHomeFragment,
+                R.id.nav_teacherAfterClassSelectedFragment,
+                R.id.nav_teacherScheduleClassFragment
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -90,7 +91,12 @@ class TeacherHomeActivity : AppCompatActivity() {
 
     fun openFragmentAfterClassSelected() {
         val navController = findNavController(R.id.nav_host_fragment_teacher)
-        navController.navigate(R.id.nav_afterClassSelectedFragment)
+        navController.navigate(R.id.nav_teacherAfterClassSelectedFragment)
+    }
+
+    fun openFragmentScheduleClass() {
+        val navController = findNavController(R.id.nav_host_fragment_teacher)
+        navController.navigate(R.id.nav_teacherScheduleClassFragment)
     }
 
 

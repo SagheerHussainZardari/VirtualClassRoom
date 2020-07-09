@@ -17,7 +17,7 @@ import com.sagheerhussainzardari.virtualclassroom.R
 import com.sagheerhussainzardari.virtualclassroom.StudentFiles.Adapters.CurrentClassesAdapter
 import com.sagheerhussainzardari.virtualclassroom.StudentFiles.Models.CurrentClassModel
 import com.sagheerhussainzardari.virtualclassroom.StudentFiles.StudentHomeActivity
-import kotlinx.android.synthetic.main.fragment_student_check_for_classes.*
+import kotlinx.android.synthetic.main.fragment_student_checkforclasses.*
 
 class StudentCheckForClassesFragment : Fragment() {
 
@@ -32,7 +32,7 @@ class StudentCheckForClassesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_student_check_for_classes, container, false)
+        return inflater.inflate(R.layout.fragment_student_checkforclasses, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

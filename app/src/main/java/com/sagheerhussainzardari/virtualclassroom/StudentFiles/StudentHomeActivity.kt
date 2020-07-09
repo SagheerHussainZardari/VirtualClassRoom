@@ -49,7 +49,7 @@ class StudentHomeActivity : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_studenthomefragment,
+                R.id.nav_studentHomeFragment,
                 R.id.nav_studentCheckForClassesFragment
             ), drawerLayout
         )
@@ -109,7 +109,7 @@ class StudentHomeActivity : AppCompatActivity() {
 
         val navController = findNavController(R.id.nav_host_fragment)
 
-        if (navController.currentDestination!!.id != R.id.nav_studenthomefragment) {
+        if (navController.currentDestination!!.id != R.id.nav_studentHomeFragment) {
             super.onBackPressed()
         } else {
             finishAffinity()

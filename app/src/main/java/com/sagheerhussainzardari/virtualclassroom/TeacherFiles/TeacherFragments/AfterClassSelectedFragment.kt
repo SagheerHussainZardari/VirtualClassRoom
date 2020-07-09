@@ -6,7 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.sagheerhussainzardari.virtualclassroom.R
-import kotlinx.android.synthetic.main.fragment_teacher_after_class_selected.*
+import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherHomeActivity
+import kotlinx.android.synthetic.main.fragment_teacher_afterclassselected.*
 
 class AfterClassSelectedFragment : Fragment() {
 
@@ -15,7 +16,7 @@ class AfterClassSelectedFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_teacher_after_class_selected, container, false)
+        return inflater.inflate(R.layout.fragment_teacher_afterclassselected, container, false)
     }
 
 
@@ -23,7 +24,7 @@ class AfterClassSelectedFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         card_scheduleNextClass_AfterClassSelectedTeacher.setOnClickListener {
-
+            (activity as TeacherHomeActivity).openFragmentScheduleClass()
         }
     }
 
