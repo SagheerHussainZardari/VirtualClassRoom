@@ -10,7 +10,6 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ValueEventListener
-import com.sagheerhussainzardari.easyandroid.showToastShort
 import com.sagheerhussainzardari.virtualclassroom.DBRef_ScheduledClasses
 import com.sagheerhussainzardari.virtualclassroom.R
 import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherHomeActivity
@@ -19,7 +18,6 @@ import kotlinx.android.synthetic.main.fragment_teacher_scheduleclass.*
 class ScheduleClassFragment : Fragment() {
 
     companion object {
-
         lateinit var baseRefForStoringClassInformation: DatabaseReference
     }
 
@@ -102,14 +100,16 @@ class ScheduleClassFragment : Fragment() {
     }
 
     private fun setUpCurrentlyAddedClass() {
+
         baseRefForStoringClassInformation
-            .child("classDate")
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onCancelled(error: DatabaseError) {}
                 override fun onDataChange(snapshot: DataSnapshot) {
-                    context?.showToastShort(snapshot.value.toString())
+                    tv_previousClass.text =
+                        snapshot.child("classDate").value.toString() + " => " + snapshot.child("classTime").value.toString()
                 }
             })
+
     }
 
 }
