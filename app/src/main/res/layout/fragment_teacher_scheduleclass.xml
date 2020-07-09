@@ -31,24 +31,42 @@
 
 
             <EditText
+                android:id="@+id/et_zoomID"
                 style="@style/style_edittext_scheduleClass"
                 android:hint="Enter Zoom Meeting ID"
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp" />
 
             <EditText
+                android:id="@+id/et_zoomPassword"
                 style="@style/style_edittext_scheduleClass"
                 android:hint="Enter Zoom Meeting Password"
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp" />
 
             <EditText
+                android:id="@+id/et_zoomLink"
                 style="@style/style_edittext_scheduleClass"
                 android:hint="Enter Zoom Meeting Link"
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp" />
 
+            <EditText
+                android:id="@+id/et_zoomTime"
+                style="@style/style_edittext_scheduleClass"
+                android:hint="Time: eg 9:00AM-10:00AM"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp" />
+
+            <EditText
+                android:id="@+id/et_zoomDate"
+                style="@style/style_edittext_scheduleClass"
+                android:hint="Class Date: eg 08-07-2020"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp" />
+
             <androidx.cardview.widget.CardView
+                android:id="@+id/btn_addClass_ScheduleClassFragmentTeacher"
                 style="@style/style_button"
                 android:layout_marginTop="32dp"
                 android:clickable="true"
