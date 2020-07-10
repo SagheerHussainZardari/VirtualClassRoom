@@ -20,7 +20,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/gradientback_withsharpcorners">
+            android:background="@drawable/currentclasscardback">
 
             <TextView
                 android:id="@+id/tv_subjectNameTeacherClasses"
@@ -38,8 +38,8 @@
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
                 android:text="Subject Name Here"
-                android:textColor="#fff"
-                android:textSize="24sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="28sp"
                 android:textStyle="bold|italic" />
 
             <TextView
@@ -58,8 +58,8 @@
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
                 android:text="Morning"
-                android:textColor="#fff"
-                android:textSize="22sp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="24sp"
                 android:textStyle="italic" />
 
             <TextView
@@ -78,10 +78,9 @@
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
                 android:text="2K17 - PE"
-                android:textColor="#fff"
-                android:textSize="24sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="26sp"
                 android:textStyle="bold|italic" />
-
 
         </RelativeLayout>
 

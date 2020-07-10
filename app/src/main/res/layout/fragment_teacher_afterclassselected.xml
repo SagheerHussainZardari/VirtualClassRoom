@@ -68,6 +68,7 @@
                 android:weightSum="2">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/card_UploadAssignment_AfterClassSelectedTeacher"
                     android:layout_width="0dp"
                     android:layout_height="175dp"
                     android:layout_marginLeft="24dp"

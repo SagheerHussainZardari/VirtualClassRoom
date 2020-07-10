@@ -8,6 +8,7 @@
 
     <fragment
         android:id="@+id/nav_teacherHomeFragment"
+
         android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherFragments.TeacherHomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_teacher_home" />
@@ -26,6 +27,11 @@
         android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherFragments.ScheduleClassFragment"
         android:label="Schedule Next Class"
         tools:layout="@layout/fragment_teacher_scheduleclass" />
+    <fragment
+        android:id="@+id/nav_teacherUploadAssignmentFragment"
+        android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherFragments.TeacherUploadAssignmentFragment"
+        android:label="Upload Assignment"
+        tools:layout="@layout/fragment_teacher_uploadassignment" />
 
 
 </navigation>
