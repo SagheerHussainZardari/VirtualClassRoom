@@ -25,6 +25,11 @@
         android:name="com.sagheerhussainzardari.virtualclassroom.StudentFiles.StudentFragments.StudentCheckForClassesFragment"
         android:label="Currently Scheduled Classes"
         tools:layout="@layout/fragment_student_checkforclasses" />
+    <fragment
+        android:id="@+id/nav_studentAssignment"
+        android:name="com.sagheerhussainzardari.virtualclassroom.StudentFiles.StudentFragments.StudentAssignment"
+        android:label="Assignments"
+        tools:layout="@layout/fragment_student_assignment" />
 
 
 </navigation>

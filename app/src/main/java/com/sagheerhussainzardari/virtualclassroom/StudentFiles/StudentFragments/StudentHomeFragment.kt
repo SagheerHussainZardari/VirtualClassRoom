@@ -25,7 +25,11 @@ class StudentHomeFragment : Fragment() {
 
 
         card_checkForClasses_StudentHomeFragment.setOnClickListener {
-            (activity as StudentHomeActivity).openFragment(StudentCheckForClassesFragment())
+            (activity as StudentHomeActivity).openFragment(R.id.nav_studentCheckForClassesFragment)
+        }
+
+        card_student_assignment.setOnClickListener {
+            (activity as StudentHomeActivity).openFragment(R.id.nav_studentAssignment)
         }
 
     }

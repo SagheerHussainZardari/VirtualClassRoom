@@ -13,7 +13,6 @@ import com.google.firebase.database.ValueEventListener
 import com.sagheerhussainzardari.easyandroid.hide
 import com.sagheerhussainzardari.easyandroid.show
 import com.sagheerhussainzardari.easyandroid.showToastLong
-import com.sagheerhussainzardari.easyandroid.showToastShort
 import com.sagheerhussainzardari.virtualclassroom.DBRef_Teachers
 import com.sagheerhussainzardari.virtualclassroom.R
 import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Adapters.ClassesTaughtByThisTeacherAdapter
@@ -121,13 +120,9 @@ class TeacherHomeFragment : Fragment() {
     }
 
 
-    fun foo() {
-        context?.showToastShort("reached here")
-    }
-
     fun setCurrentClassSelected(currentClass: ClassesTaughtByThisTeacherModel) {
         currentClassSelected = currentClass
-        (activity as TeacherHomeActivity).openFragmentAfterClassSelected()
+        (activity as TeacherHomeActivity).openFragment(R.id.nav_teacherAfterClassSelectedFragment)
     }
 
 

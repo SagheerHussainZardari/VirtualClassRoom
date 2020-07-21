@@ -6,7 +6,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -50,7 +49,8 @@ class StudentHomeActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.nav_studentHomeFragment,
-                R.id.nav_studentCheckForClassesFragment
+                R.id.nav_studentCheckForClassesFragment,
+                R.id.nav_studentAssignment
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -88,10 +88,7 @@ class StudentHomeActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
-    fun openFragment(fragment: Fragment) {
-        val navController = findNavController(R.id.nav_host_fragment)
-        navController.navigate(R.id.nav_studentCheckForClassesFragment)
-    }
+
 
     fun logout() {
         mAuth.signOut()
@@ -114,6 +111,11 @@ class StudentHomeActivity : AppCompatActivity() {
         } else {
             finishAffinity()
         }
+    }
+
+    fun openFragment(fragment: Int) {
+        val navController = findNavController(R.id.nav_host_fragment)
+        navController.navigate(fragment)
     }
 
 }

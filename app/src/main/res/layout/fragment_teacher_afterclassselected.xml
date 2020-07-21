@@ -121,6 +121,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/card_uploadResult_teacherr"
                     android:layout_width="0dp"
                     android:layout_height="175dp"
                     android:layout_marginLeft="8dp"

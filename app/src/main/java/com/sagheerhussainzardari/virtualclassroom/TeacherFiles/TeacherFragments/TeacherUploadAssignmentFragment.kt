@@ -71,6 +71,7 @@ class TeacherUploadAssignmentFragment : Fragment() {
                     if (snapshot.hasChildren()) {
                         downloadUrl = snapshot.child("downloadUrl").value.toString()
                     } else {
+                        tv_assignmentName.text = ""
                         context?.showToastLong("Your Haven't Uploaded Any Assignments For ${TeacherHomeFragment.currentClassSelected!!.subjectName} Yet")
                     }
                 }

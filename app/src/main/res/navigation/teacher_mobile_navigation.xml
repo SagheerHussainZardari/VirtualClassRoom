@@ -32,6 +32,11 @@
         android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherFragments.TeacherUploadAssignmentFragment"
         android:label="Upload Assignment"
         tools:layout="@layout/fragment_teacher_uploadassignment" />
+    <fragment
+        android:id="@+id/nav_teacherUploadResults"
+        android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherFragments.TeacherUploadResults"
+        android:label="Upload Results"
+        tools:layout="@layout/fragment_teacher_upload_results" />
 
 
 </navigation>

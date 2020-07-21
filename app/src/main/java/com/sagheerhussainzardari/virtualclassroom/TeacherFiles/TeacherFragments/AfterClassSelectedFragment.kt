@@ -24,11 +24,15 @@ class AfterClassSelectedFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         card_scheduleNextClass_AfterClassSelectedTeacher.setOnClickListener {
-            (activity as TeacherHomeActivity).openFragmentScheduleClass()
+            (activity as TeacherHomeActivity).openFragment(R.id.nav_teacherScheduleClassFragment)
         }
 
         card_UploadAssignment_AfterClassSelectedTeacher.setOnClickListener {
-            (activity as TeacherHomeActivity).openFragmentUploadAssignment()
+            (activity as TeacherHomeActivity).openFragment(R.id.nav_teacherUploadAssignmentFragment)
+        }
+
+        card_uploadResult_teacherr.setOnClickListener {
+            (activity as TeacherHomeActivity).openFragment(R.id.nav_teacherUploadResults)
         }
     }
 

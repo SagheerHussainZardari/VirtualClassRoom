@@ -59,7 +59,8 @@ class TeacherHomeActivity : AppCompatActivity() {
                 R.id.nav_teacherHomeFragment,
                 R.id.nav_teacherAfterClassSelectedFragment,
                 R.id.nav_teacherScheduleClassFragment,
-                R.id.nav_teacherUploadAssignmentFragment
+                R.id.nav_teacherUploadAssignmentFragment,
+                R.id.nav_teacherUploadResults
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -102,19 +103,9 @@ class TeacherHomeActivity : AppCompatActivity() {
         startActivity(Intent(this, TeacherLoginActivity::class.java))
     }
 
-    fun openFragmentAfterClassSelected() {
+    fun openFragment(fragment: Int) {
         val navController = findNavController(R.id.nav_host_fragment_teacher)
-        navController.navigate(R.id.nav_teacherAfterClassSelectedFragment)
-    }
-
-    fun openFragmentScheduleClass() {
-        val navController = findNavController(R.id.nav_host_fragment_teacher)
-        navController.navigate(R.id.nav_teacherScheduleClassFragment)
-    }
-
-    fun openFragmentUploadAssignment() {
-        val navController = findNavController(R.id.nav_host_fragment_teacher)
-        navController.navigate(R.id.nav_teacherUploadAssignmentFragment)
+        navController.navigate(fragment)
     }
 
 
@@ -176,6 +167,17 @@ class TeacherHomeActivity : AppCompatActivity() {
             .child(TeacherHomeFragment.currentClassSelected!!.subjectName)
 
         baseRefForStoringClassInformation.child("downloadUrl").setValue(downloadUrl)
+    }
+
+
+    override fun onBackPressed() {
+        val navController = findNavController(R.id.nav_host_fragment_teacher)
+
+        if (navController.currentDestination!!.id != R.id.nav_teacherHomeFragment) {
+            super.onBackPressed()
+        } else {
+            finishAffinity()
+        }
     }
 
     fun selectPdfFromFiles() {
