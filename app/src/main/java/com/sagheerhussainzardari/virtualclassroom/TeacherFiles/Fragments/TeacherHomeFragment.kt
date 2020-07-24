@@ -1,4 +1,4 @@
-package com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherFragments
+package com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Fragments
 
 import android.os.Bundle
 import android.util.Log

@@ -20,8 +20,8 @@ import com.sagheerhussainzardari.easyandroid.show
 import com.sagheerhussainzardari.easyandroid.showToastShort
 import com.sagheerhussainzardari.virtualclassroom.DBRef_Assignments
 import com.sagheerhussainzardari.virtualclassroom.R
+import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Fragments.TeacherHomeFragment
 import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Models.ClassesTaughtByThisTeacherModel
-import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherFragments.TeacherHomeFragment
 import kotlinx.android.synthetic.main.fragment_teacher_uploadassignment.*
 import kotlinx.android.synthetic.main.nav_header_teacher.view.*
 import java.io.File
@@ -60,7 +60,11 @@ class TeacherHomeActivity : AppCompatActivity() {
                 R.id.nav_teacherAfterClassSelectedFragment,
                 R.id.nav_teacherScheduleClassFragment,
                 R.id.nav_teacherUploadAssignmentFragment,
-                R.id.nav_teacherUploadResults
+                R.id.nav_teacherUploadResults,
+                R.id.nav_uploadAttendence,
+                R.id.nav_uploadCourseMaterial,
+                R.id.nav_chatWithStudents,
+                R.id.nav_writeOnNoticeBoard
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

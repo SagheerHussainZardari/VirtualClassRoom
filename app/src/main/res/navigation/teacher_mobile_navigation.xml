@@ -9,34 +9,54 @@
     <fragment
         android:id="@+id/nav_teacherHomeFragment"
 
-        android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherFragments.TeacherHomeFragment"
+        android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Fragments.TeacherHomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_teacher_home" />
     <fragment
         android:id="@+id/nav_teacherLogoutFragment"
-        android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherFragments.TeacherLogoutFragment"
+        android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Fragments.TeacherLogoutFragment"
         android:label="Logout"
         tools:layout="@layout/fragment_teacher_logout" />
     <fragment
         android:id="@+id/nav_teacherAfterClassSelectedFragment"
-        android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherFragments.AfterClassSelectedFragment"
+        android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Fragments.AfterClassSelectedFragment"
         android:label="Class Dashboard"
         tools:layout="@layout/fragment_teacher_afterclassselected" />
     <fragment
         android:id="@+id/nav_teacherScheduleClassFragment"
-        android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherFragments.ScheduleClassFragment"
+        android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Fragments.ScheduleClassFragment"
         android:label="Schedule Next Class"
         tools:layout="@layout/fragment_teacher_scheduleclass" />
     <fragment
         android:id="@+id/nav_teacherUploadAssignmentFragment"
-        android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherFragments.TeacherUploadAssignmentFragment"
+        android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Fragments.TeacherUploadAssignmentFragment"
         android:label="Upload Assignment"
         tools:layout="@layout/fragment_teacher_uploadassignment" />
     <fragment
         android:id="@+id/nav_teacherUploadResults"
-        android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherFragments.TeacherUploadResults"
+        android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Fragments.TeacherUploadResults"
         android:label="Upload Results"
         tools:layout="@layout/fragment_teacher_upload_results" />
+    <fragment
+        android:id="@+id/nav_uploadAttendence"
+        android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Fragments.UploadAttendence"
+        android:label="Upload Attendence"
+        tools:layout="@layout/fragment_teacher_upload_attendence" />
+    <fragment
+        android:id="@+id/nav_uploadCourseMaterial"
+        android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Fragments.UploadCourseMaterial"
+        android:label="Upload Course Material"
+        tools:layout="@layout/fragment_teacher_upload_course_material" />
+    <fragment
+        android:id="@+id/nav_chatWithStudents"
+        android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Fragments.ChatWithStudents"
+        android:label="Chat With Students"
+        tools:layout="@layout/fragment_teacher_chat_with_students" />
+    <fragment
+        android:id="@+id/nav_writeOnNoticeBoard"
+        android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Fragments.WriteOnNoticeBoard"
+        android:label="Write On Notice Board"
+        tools:layout="@layout/fragment_teacher_write_on_notice_board" />
 
 
 </navigation>

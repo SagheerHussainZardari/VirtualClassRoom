@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".TeacherFiles.TeacherFragments.AfterClassSelectedFragment">
+    tools:context=".TeacherFiles.Fragments.AfterClassSelectedFragment">
 
 
     <ScrollView
@@ -180,6 +180,7 @@
                 android:weightSum="2">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/card_upload_attendence"
                     android:layout_width="0dp"
                     android:layout_height="175dp"
                     android:layout_marginLeft="24dp"
@@ -231,6 +232,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/card_upload_course_material"
                     android:layout_width="0dp"
                     android:layout_height="175dp"
                     android:layout_marginLeft="8dp"
@@ -290,6 +292,7 @@
                 android:weightSum="2">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/card_chat_with_students"
                     android:layout_width="0dp"
                     android:layout_height="175dp"
                     android:layout_marginLeft="24dp"
@@ -342,6 +345,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/card_write_on_noticeboard"
                     android:layout_width="0dp"
                     android:layout_height="175dp"
                     android:layout_marginLeft="8dp"

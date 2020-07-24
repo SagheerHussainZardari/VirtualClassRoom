@@ -1,4 +1,4 @@
-package com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherFragments
+package com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -34,6 +34,24 @@ class AfterClassSelectedFragment : Fragment() {
         card_uploadResult_teacherr.setOnClickListener {
             (activity as TeacherHomeActivity).openFragment(R.id.nav_teacherUploadResults)
         }
+
+        card_upload_attendence.setOnClickListener {
+            (activity as TeacherHomeActivity).openFragment(R.id.nav_uploadAttendence)
+        }
+
+        card_upload_course_material.setOnClickListener {
+            (activity as TeacherHomeActivity).openFragment(R.id.nav_uploadCourseMaterial)
+        }
+
+        card_chat_with_students.setOnClickListener {
+            (activity as TeacherHomeActivity).openFragment(R.id.nav_chatWithStudents)
+        }
+
+        card_write_on_noticeboard.setOnClickListener {
+            (activity as TeacherHomeActivity).openFragment(R.id.nav_writeOnNoticeBoard)
+        }
+
+
     }
 
 }

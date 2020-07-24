@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.sagheerhussainzardari.virtualclassroom.R
+import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Fragments.TeacherHomeFragment
 import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Models.ClassesTaughtByThisTeacherModel
-import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherFragments.TeacherHomeFragment
 import kotlinx.android.synthetic.main.layout_recycler_teacherclasses.view.*
 
 public class ClassesTaughtByThisTeacherAdapter(

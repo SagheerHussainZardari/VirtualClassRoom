@@ -1,4 +1,4 @@
-package com.sagheerhussainzardari.virtualclassroom.StudentFiles.StudentFragments
+package com.sagheerhussainzardari.virtualclassroom.StudentFiles.Fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater

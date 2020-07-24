@@ -1,4 +1,4 @@
-package com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherFragments
+package com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Fragments
 
 import android.os.Bundle
 import android.util.Patterns
@@ -121,11 +121,11 @@ class ScheduleClassFragment : Fragment() {
                 override fun onCancelled(error: DatabaseError) {}
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.hasChildren()) {
-                        tv_previousClass.show()
-                        tv_previousClass.text =
+                        tv_previousClass?.show()
+                        tv_previousClass?.text =
                             snapshot.child("classDate").value.toString() + " => " + snapshot.child("classTime").value.toString()
                     } else {
-                        tv_previousClass.hide()
+                        tv_previousClass?.hide()
                         context?.showToastLong("No Class Scheduled Yet!!!")
                     }
                 }
