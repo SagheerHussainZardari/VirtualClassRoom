@@ -38,7 +38,9 @@
                     android:lines="1"
                     android:text="Upload Assignment"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="36sp"
+                    android:padding="4dp"
+                    android:textSize="30sp"
+
                     android:textStyle="bold|italic"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -125,6 +127,19 @@
 
         </androidx.cardview.widget.CardView>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="24sp"
+            android:paddingRight="24sp"
+            android:text="Note: Adding New Assignment Will Automatically Delete Previous Assignment"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView2"
             android:layout_width="match_parent"
@@ -155,7 +170,9 @@
                     android:lines="1"
                     android:text="Previous Assignment"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="36sp"
+                    android:padding="4dp"
+                    android:textSize="30sp"
+
                     android:textStyle="bold|italic"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

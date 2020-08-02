@@ -32,7 +32,33 @@ class StudentHomeFragment : Fragment() {
             (activity as StudentHomeActivity).openFragment(R.id.nav_studentAssignment)
         }
 
-    }
+        card_results.setOnClickListener {
+            (activity as StudentHomeActivity).openFragment(R.id.nav_results)
+        }
 
+        card_attendence.setOnClickListener {
+            (activity as StudentHomeActivity).openFragment(R.id.nav_attendence)
+        }
+
+        card_course_material.setOnClickListener {
+            (activity as StudentHomeActivity).openFragment(R.id.nav_coursesMaterial)
+        }
+
+        card_chat_with_teacher.setOnClickListener {
+            (activity as StudentHomeActivity).openFragment(R.id.nav_chatWithTeacher)
+        }
+
+        card_chat_with_class_fellow.setOnClickListener {
+            (activity as StudentHomeActivity).openFragment(R.id.nav_chatWithClassFellows)
+        }
+
+        card_chat_with_class_fellow.setOnClickListener {
+            (activity as StudentHomeActivity).openFragment(R.id.nav_chatWithClassFellows)
+        }
+
+        card_digital_notice_board.setOnClickListener {
+            (activity as StudentHomeActivity).openFragment(R.id.nav_digitalNoticeBoard)
+        }
+    }
 
 }

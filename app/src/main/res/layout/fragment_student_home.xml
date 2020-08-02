@@ -121,6 +121,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/card_results"
                     android:layout_width="0dp"
                     android:layout_height="175dp"
                     android:layout_marginLeft="8dp"
@@ -156,12 +157,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="3.5"
+                            android:ellipsize="end"
                             android:gravity="center"
+                            android:lines="1"
                             android:paddingLeft="8dp"
                             android:paddingRight="8dp"
                             android:text="Results"
-                            android:ellipsize="end"
-                            android:lines="1"
                             android:textColor="#fff"
                             android:textSize="20sp"
                             android:textStyle="bold"
@@ -179,6 +180,7 @@
                 android:weightSum="2">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/card_attendence"
                     android:layout_width="0dp"
                     android:layout_height="175dp"
                     android:layout_marginLeft="24dp"
@@ -214,12 +216,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="3.5"
+                            android:ellipsize="end"
                             android:gravity="center"
+                            android:lines="1"
                             android:paddingLeft="8dp"
                             android:paddingRight="8dp"
                             android:text="Attendence"
-                            android:ellipsize="end"
-                            android:lines="1"
                             android:textColor="#fff"
                             android:textSize="20sp"
                             android:textStyle="bold"
@@ -230,6 +232,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/card_course_material"
                     android:layout_width="0dp"
                     android:layout_height="175dp"
                     android:layout_marginLeft="8dp"
@@ -266,12 +269,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="3.5"
+                            android:ellipsize="end"
                             android:gravity="center"
+                            android:lines="2"
                             android:paddingLeft="8dp"
                             android:paddingRight="8dp"
                             android:text="Course\nMaterial"
-                            android:ellipsize="end"
-                            android:lines="2"
                             android:textColor="#fff"
                             android:textSize="20sp"
                             android:textStyle="bold"
@@ -289,6 +292,7 @@
                 android:weightSum="2">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/card_chat_with_teacher"
                     android:layout_width="0dp"
                     android:layout_height="175dp"
                     android:layout_marginLeft="24dp"
@@ -325,12 +329,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="3.5"
+                            android:ellipsize="end"
                             android:gravity="center"
+                            android:lines="2"
                             android:paddingLeft="8dp"
                             android:paddingRight="8dp"
                             android:text="Chat With\nTeacher"
-                            android:ellipsize="end"
-                            android:lines="2"
                             android:textColor="#fff"
                             android:textSize="20sp"
                             android:textStyle="bold"
@@ -341,6 +345,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/card_chat_with_class_fellow"
                     android:layout_width="0dp"
                     android:layout_height="175dp"
                     android:layout_marginLeft="8dp"
@@ -377,12 +382,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="3.5"
+                            android:ellipsize="end"
                             android:gravity="center"
+                            android:lines="2"
                             android:paddingLeft="8dp"
                             android:paddingRight="8dp"
                             android:text="Chat With\nClass Fellows"
-                            android:ellipsize="end"
-                            android:lines="2"
                             android:textColor="#fff"
                             android:textSize="20sp"
                             android:textStyle="bold"
@@ -400,6 +405,7 @@
                 android:weightSum="2">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/card_digital_notice_board"
                     android:layout_width="0dp"
                     android:layout_height="175dp"
                     android:layout_marginLeft="24dp"
@@ -436,14 +442,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="3.5"
+                            android:ellipsize="end"
                             android:gravity="center"
+                            android:lines="2"
                             android:paddingLeft="8dp"
                             android:paddingRight="8dp"
                             android:text="Digital\nNotice Board"
                             android:textColor="#fff"
                             android:textSize="20sp"
-                            android:ellipsize="end"
-                            android:lines="2"
                             android:textStyle="bold"
 
                             />

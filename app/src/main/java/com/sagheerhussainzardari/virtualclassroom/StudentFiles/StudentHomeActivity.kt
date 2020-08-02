@@ -50,7 +50,13 @@ class StudentHomeActivity : AppCompatActivity() {
             setOf(
                 R.id.nav_studentHomeFragment,
                 R.id.nav_studentCheckForClassesFragment,
-                R.id.nav_studentAssignment
+                R.id.nav_studentAssignment,
+                R.id.nav_results,
+                R.id.nav_attendence,
+                R.id.nav_coursesMaterial,
+                R.id.nav_chatWithTeacher,
+                R.id.nav_chatWithClassFellows,
+                R.id.nav_digitalNoticeBoard
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

@@ -30,6 +30,36 @@
         android:name="com.sagheerhussainzardari.virtualclassroom.StudentFiles.Fragments.StudentAssignment"
         android:label="Assignments"
         tools:layout="@layout/fragment_student_assignment" />
+    <fragment
+        android:id="@+id/nav_results"
+        android:name="com.sagheerhussainzardari.virtualclassroom.StudentFiles.Fragments.Results"
+        android:label="Results"
+        tools:layout="@layout/fragment_student_results" />
+    <fragment
+        android:id="@+id/nav_attendence"
+        android:name="com.sagheerhussainzardari.virtualclassroom.StudentFiles.Fragments.Attendence"
+        android:label="Attendence"
+        tools:layout="@layout/fragment_student_attendence" />
+    <fragment
+        android:id="@+id/nav_coursesMaterial"
+        android:name="com.sagheerhussainzardari.virtualclassroom.StudentFiles.Fragments.CoursesMaterial"
+        android:label="Courses Material"
+        tools:layout="@layout/fragment_student_courses_material" />
+    <fragment
+        android:id="@+id/nav_chatWithTeacher"
+        android:name="com.sagheerhussainzardari.virtualclassroom.StudentFiles.Fragments.ChatWithTeacher"
+        android:label="Chat With Teacher"
+        tools:layout="@layout/fragment_student_chat_with_teacher" />
+    <fragment
+        android:id="@+id/nav_chatWithClassFellows"
+        android:name="com.sagheerhussainzardari.virtualclassroom.StudentFiles.Fragments.ChatWithClassFellows"
+        android:label="Chat With Class Fellows"
+        tools:layout="@layout/fragment_student_chat_with_class_fellows" />
+    <fragment
+        android:id="@+id/nav_digitalNoticeBoard"
+        android:name="com.sagheerhussainzardari.virtualclassroom.StudentFiles.Fragments.DigitalNoticeBoard"
+        android:label="Digital Notice Board"
+        tools:layout="@layout/fragment_student_digital_notice_board" />
 
 
 </navigation>
