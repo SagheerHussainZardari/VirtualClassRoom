@@ -44,7 +44,10 @@ class StudentAssignment : Fragment() {
                 override fun onNothingSelected(p0: AdapterView<*>?) {}
 
                 override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                    getDownloadUrlIfAvaiable(subjects[p2].substringBefore(' '))
+                    getDownloadUrlIfAvaiable(
+                        subjects[p2].substringBefore(' '),
+                        subjects[p2].substringAfter(' ')
+                    )
                 }
             }
 
@@ -87,7 +90,7 @@ class StudentAssignment : Fragment() {
 
     }
 
-    private fun getDownloadUrlIfAvaiable(subject: String) {
+    private fun getDownloadUrlIfAvaiable(subject: String, subjectName: String) {
 
         val baseRefForStoringClassInformation = DBRef_Assignments
             .child(StudentHomeActivity.studentFaculity)
@@ -103,13 +106,13 @@ class StudentAssignment : Fragment() {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.hasChildren()) {
                         downloadUrl = snapshot.child("downloadUrl").value.toString()
-                        tv_assignmentName_student.text = "Yes There Is Assignment";
+                        tv_assignmentName_student.text = "$subjectName's Assignment";
                         pb_studentAssignment.visibility = View.GONE
 
                     } else {
                         tv_assignmentName_student.text = "No Assignemnt"
                         pb_studentAssignment.visibility = View.GONE
-                        //context?.showToastLong("Your Haven't Uploaded Any Assignments For Electronics Yet")
+                        context?.showToastLong("Your Haven't Uploaded Any Assignments For $subjectName Yet")
                     }
                 }
             })

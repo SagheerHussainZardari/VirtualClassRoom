@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.sagheerhussainzardari.easyandroid.showToastLong
+import com.sagheerhussainzardari.easyandroid.openLinkInBrowser
 import com.sagheerhussainzardari.virtualclassroom.R
 import com.sagheerhussainzardari.virtualclassroom.StudentFiles.Models.CurrentClassModel
 import com.sagheerhussainzardari.virtualclassroom.StudentFiles.StudentHomeActivity
@@ -43,9 +43,7 @@ class CurrentClassesAdapter(
             "Zoom Password: " + currectClassesList[position].classZoomPassword
 
         holder.view.btn_joinMeeting_recycler_currentclassess.setOnClickListener {
-            context?.showToastLong("visit link")
+            openLinkInBrowser(currectClassesList[position].classZoomLink, context)
         }
-
     }
-
 }
