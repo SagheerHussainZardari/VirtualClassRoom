@@ -89,7 +89,8 @@ class TeacherHomeFragment : Fragment() {
                                         subjectFaculty,
                                         subjectDept,
                                         subjectDegree,
-                                        subjectGroup
+                                        subjectGroup,
+                                        subject.key.toString()
                                     )
                                 )
                             }

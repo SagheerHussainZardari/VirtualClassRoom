@@ -1,7 +1,6 @@
 package com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Fragments
 
 import android.os.Bundle
-import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -44,7 +43,7 @@ class ScheduleClassFragment : Fragment() {
             .child(TeacherHomeFragment.currentClassSelected!!.subjectTime)
             .child(TeacherHomeFragment.currentClassSelected!!.subjectBatch.toUpperCase())
             .child(TeacherHomeFragment.currentClassSelected!!.subjectGroup.toUpperCase())
-            .child(TeacherHomeFragment.currentClassSelected!!.subjectName)
+            .child(TeacherHomeFragment.currentClassSelected!!.subjectCode)
 
 
         setUpCurrentlyAddedClass()
@@ -58,7 +57,7 @@ class ScheduleClassFragment : Fragment() {
 
             if (zoomID.isNotEmpty()) {
                 if (zoomPassword.isNotEmpty()) {
-                    if (Patterns.WEB_URL.matcher(zoomLink).matches()) {
+                    if (zoomLink.isNotEmpty()) { /*Patterns.WEB_URL.matcher(zoomLink).matches()*/
                         if (zoomTime.isNotEmpty()) {
                             if (zoomDate.isNotEmpty()) {
                                 pb_schceduleClass.show()

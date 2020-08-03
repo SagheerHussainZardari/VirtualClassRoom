@@ -63,7 +63,7 @@ class TeacherUploadAssignment : Fragment() {
             .child(TeacherHomeFragment.currentClassSelected!!.subjectTime)
             .child(TeacherHomeFragment.currentClassSelected!!.subjectBatch.toUpperCase())
             .child(TeacherHomeFragment.currentClassSelected!!.subjectGroup.toUpperCase())
-            .child(TeacherHomeFragment.currentClassSelected!!.subjectName)
+            .child(TeacherHomeFragment.currentClassSelected!!.subjectCode)
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onCancelled(error: DatabaseError) {}
 
@@ -77,6 +77,4 @@ class TeacherUploadAssignment : Fragment() {
                 }
             })
     }
-
-
 }

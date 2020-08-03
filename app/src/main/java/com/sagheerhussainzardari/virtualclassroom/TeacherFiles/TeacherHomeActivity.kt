@@ -40,6 +40,7 @@ class TeacherHomeActivity : AppCompatActivity() {
         var teacherEmail = ""
         var teacherFaculty = ""
         var teacherDept = ""
+
     }
 
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -139,7 +140,7 @@ class TeacherHomeActivity : AppCompatActivity() {
             pb_uploadingAssignment.show()
 
             val filePath =
-                "Assignments/$teacherFaculty/$teacherDept/${TeacherHomeFragment.currentClassSelected!!.subjectDegree}/${TeacherHomeFragment.currentClassSelected!!.subjectTime}/${TeacherHomeFragment.currentClassSelected!!.subjectBatch}/${TeacherHomeFragment.currentClassSelected!!.subjectGroup}/${TeacherHomeFragment.currentClassSelected!!.subjectName}"
+                "Assignments/$teacherFaculty/$teacherDept/${TeacherHomeFragment.currentClassSelected!!.subjectDegree}/${TeacherHomeFragment.currentClassSelected!!.subjectTime}/${TeacherHomeFragment.currentClassSelected!!.subjectBatch}/${TeacherHomeFragment.currentClassSelected!!.subjectGroup}/${TeacherHomeFragment.currentClassSelected!!.subjectCode}"
             mStorageRef.child(filePath).putFile(pdfUri!!).addOnCompleteListener {
                 if (it.isSuccessful) {
                     it.result!!.storage.downloadUrl.addOnCompleteListener { downloadUrl ->
@@ -168,7 +169,7 @@ class TeacherHomeActivity : AppCompatActivity() {
             .child(TeacherHomeFragment.currentClassSelected!!.subjectTime)
             .child(TeacherHomeFragment.currentClassSelected!!.subjectBatch.toUpperCase())
             .child(TeacherHomeFragment.currentClassSelected!!.subjectGroup.toUpperCase())
-            .child(TeacherHomeFragment.currentClassSelected!!.subjectName)
+            .child(TeacherHomeFragment.currentClassSelected!!.subjectCode)
 
         baseRefForStoringClassInformation.child("downloadUrl").setValue(downloadUrl)
     }

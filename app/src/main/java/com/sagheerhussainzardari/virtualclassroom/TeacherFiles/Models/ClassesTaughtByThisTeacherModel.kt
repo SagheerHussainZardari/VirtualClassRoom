@@ -7,5 +7,6 @@ data class ClassesTaughtByThisTeacherModel(
     var subjectFaculty: String,
     var subjectDept: String,
     var subjectDegree: String,
-    var subjectGroup: String
+    var subjectGroup: String,
+    var subjectCode: String
 )
