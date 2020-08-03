@@ -10,7 +10,6 @@
     android:weightSum="10"
     tools:context=".TeacherFiles.Fragments.ChatWithStudents">
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -30,6 +29,7 @@
             android:layout_marginLeft="0dp"
             android:layout_marginRight="0dp"
             android:layout_weight="8"
+            android:textSize="15sp"
             android:hint="Enter Your Message Here"
             android:inputType="textMultiLine"
             android:lines="6"
