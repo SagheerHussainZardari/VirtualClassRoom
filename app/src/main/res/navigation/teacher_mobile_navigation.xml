@@ -29,7 +29,7 @@
         tools:layout="@layout/fragment_teacher_scheduleclass" />
     <fragment
         android:id="@+id/nav_teacherUploadAssignmentFragment"
-        android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Fragments.TeacherUploadAssignmentFragment"
+        android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Fragments.TeacherUploadAssignment"
         android:label="Upload Assignment"
         tools:layout="@layout/fragment_teacher_uploadassignment" />
     <fragment

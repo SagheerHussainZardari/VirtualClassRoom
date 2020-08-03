@@ -16,7 +16,7 @@ import com.sagheerhussainzardari.virtualclassroom.R
 import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherHomeActivity
 import kotlinx.android.synthetic.main.fragment_teacher_uploadassignment.*
 
-class TeacherUploadAssignmentFragment : Fragment() {
+class TeacherUploadAssignment : Fragment() {
 
     var downloadUrl = ""
 
@@ -76,8 +76,6 @@ class TeacherUploadAssignmentFragment : Fragment() {
                     }
                 }
             })
-
-
     }
 
 
