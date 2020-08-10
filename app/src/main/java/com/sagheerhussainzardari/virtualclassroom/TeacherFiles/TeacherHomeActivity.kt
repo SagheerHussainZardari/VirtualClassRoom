@@ -14,14 +14,20 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
 import com.google.firebase.storage.FirebaseStorage
 import com.sagheerhussainzardari.easyandroid.hide
 import com.sagheerhussainzardari.easyandroid.show
+import com.sagheerhussainzardari.easyandroid.showToastLong
 import com.sagheerhussainzardari.easyandroid.showToastShort
 import com.sagheerhussainzardari.virtualclassroom.DBRef_Assignments
+import com.sagheerhussainzardari.virtualclassroom.DBRef_Attendence
+import com.sagheerhussainzardari.virtualclassroom.DBRef_Results
 import com.sagheerhussainzardari.virtualclassroom.R
 import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Fragments.TeacherHomeFragment
 import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Models.ClassesTaughtByThisTeacherModel
+import kotlinx.android.synthetic.main.fragment_teacher_upload_attendence.*
+import kotlinx.android.synthetic.main.fragment_teacher_upload_results.*
 import kotlinx.android.synthetic.main.fragment_teacher_uploadassignment.*
 import kotlinx.android.synthetic.main.nav_header_teacher.view.*
 import java.io.File
@@ -119,50 +125,15 @@ class TeacherHomeActivity : AppCompatActivity() {
 
 
         if (resultCode == RESULT_OK && requestCode == 200 && data != null) {
-
             pdfUri = data.data
             val file = File(pdfUri!!.path)
-
-//            var btn_chooseAssignment = findViewById<TextView>(R.id.tv_chooseAssignment)
-            tv_chooseAssignment.text = data.dataString
-
-        } else {
-            showToastShort("Please Select a PDF File!!!")
-            pb_uploadingAssignment.hide()
+            showToastLong("PDF SELECTED CLICK UPLOAD BUTTON TO UPLOAD NOW....")
         }
     }
 
-    fun uploadAssignment() {
 
-        if (pdfUri != null) {
-            showToastShort("Please Wait Uploading Assignment")
-            pb_uploadingAssignment.setOnClickListener { }
-            pb_uploadingAssignment.show()
-
-            val filePath =
-                "Assignments/$teacherFaculty/$teacherDept/${TeacherHomeFragment.currentClassSelected!!.subjectDegree}/${TeacherHomeFragment.currentClassSelected!!.subjectTime}/${TeacherHomeFragment.currentClassSelected!!.subjectBatch}/${TeacherHomeFragment.currentClassSelected!!.subjectGroup}/${TeacherHomeFragment.currentClassSelected!!.subjectCode}"
-            mStorageRef.child(filePath).putFile(pdfUri!!).addOnCompleteListener {
-                if (it.isSuccessful) {
-                    it.result!!.storage.downloadUrl.addOnCompleteListener { downloadUrl ->
-                        uploadDownloadUrl(downloadUrl.result.toString())
-                        showToastShort("Assignment Uploaded Successfully!!!")
-                        tv_chooseAssignment.text = "Choose Assignment"
-                        pb_uploadingAssignment.hide()
-                    }
-                } else {
-                    tv_chooseAssignment.text = "Choose Assignment"
-                    showToastShort("Failed To Upload Assignment\nTry Again!!")
-                    pb_uploadingAssignment.hide()
-                }
-            }
-        } else {
-            tv_chooseAssignment.text = "Choose Assignment"
-            showToastShort("Please Select A PDF File First Than Click Upload")
-        }
-    }
-
-    private fun uploadDownloadUrl(downloadUrl: String) {
-        val baseRefForStoringClassInformation = DBRef_Assignments
+    private fun uploadDownloadUrl(downloadUrl: String, ref: DatabaseReference) {
+        val baseRefForStoringClassInformation = ref
             .child(TeacherHomeActivity.teacherFaculty)
             .child(TeacherHomeActivity.teacherDept)
             .child(TeacherHomeFragment.currentClassSelected!!.subjectDegree.toUpperCase())
@@ -189,6 +160,92 @@ class TeacherHomeActivity : AppCompatActivity() {
         val intent = Intent(Intent.ACTION_GET_CONTENT)
         intent.type = "application/pdf"
         startActivityForResult(intent, 200)
+    }
+
+    fun uploadAssignment() {
+
+        if (pdfUri != null) {
+            showToastShort("Please Wait Uploading Assignment")
+            pb_uploadingAssignment.setOnClickListener { }
+            pb_uploadingAssignment.show()
+
+            val filePath =
+                "Assignments/$teacherFaculty/$teacherDept/${TeacherHomeFragment.currentClassSelected!!.subjectDegree}/${TeacherHomeFragment.currentClassSelected!!.subjectTime}/${TeacherHomeFragment.currentClassSelected!!.subjectBatch}/${TeacherHomeFragment.currentClassSelected!!.subjectGroup}/${TeacherHomeFragment.currentClassSelected!!.subjectCode}"
+            mStorageRef.child(filePath).putFile(pdfUri!!).addOnCompleteListener {
+                if (it.isSuccessful) {
+                    it.result!!.storage.downloadUrl.addOnCompleteListener { downloadUrl ->
+                        uploadDownloadUrl(downloadUrl.result.toString(), DBRef_Assignments)
+                        showToastShort("Assignment Uploaded Successfully!!!")
+                        tv_chooseAssignment.text = "Choose Assignment"
+                        pb_uploadingAssignment.hide()
+                    }
+                } else {
+                    tv_chooseAssignment.text = "Choose Assignment"
+                    showToastShort("Failed To Upload Assignment\nTry Again!!")
+                    pb_uploadingAssignment.hide()
+                }
+            }
+        } else {
+            tv_chooseAssignment.text = "Choose Assignment"
+            showToastShort("Please Select A PDF File First Than Click Upload")
+        }
+    }
+
+
+    fun uploadResults() {
+        if (pdfUri != null) {
+            showToastShort("Please Wait Uploading Results")
+            pb_uploadingResult.setOnClickListener { }
+            pb_uploadingResult.show()
+
+            val filePath =
+                "Results/$teacherFaculty/$teacherDept/${TeacherHomeFragment.currentClassSelected!!.subjectDegree}/${TeacherHomeFragment.currentClassSelected!!.subjectTime}/${TeacherHomeFragment.currentClassSelected!!.subjectBatch}/${TeacherHomeFragment.currentClassSelected!!.subjectGroup}/${TeacherHomeFragment.currentClassSelected!!.subjectCode}"
+            mStorageRef.child(filePath).putFile(pdfUri!!).addOnCompleteListener {
+                if (it.isSuccessful) {
+                    it.result!!.storage.downloadUrl.addOnCompleteListener { downloadUrl ->
+                        uploadDownloadUrl(downloadUrl.result.toString(), DBRef_Results)
+                        showToastShort("Result Uploaded Successfully!!!")
+                        tv_chooseResult.text = "Choose Result"
+                        pb_uploadingResult.hide()
+                    }
+                } else {
+                    tv_chooseResult.text = "Choose Result"
+                    showToastShort("Failed To Upload Results\nTry Again!!")
+                    pb_uploadingResult.hide()
+                }
+            }
+        } else {
+            tv_chooseResult.text = "Choose Result"
+            showToastShort("Please Select A PDF File First Than Click Upload")
+        }
+    }
+
+    fun uploadAttendence() {
+        if (pdfUri != null) {
+            showToastShort("Please Wait Uploading Attendence")
+            pb_uploadingAttendence.setOnClickListener { }
+            pb_uploadingAttendence.show()
+
+            val filePath =
+                "Attendence/$teacherFaculty/$teacherDept/${TeacherHomeFragment.currentClassSelected!!.subjectDegree}/${TeacherHomeFragment.currentClassSelected!!.subjectTime}/${TeacherHomeFragment.currentClassSelected!!.subjectBatch}/${TeacherHomeFragment.currentClassSelected!!.subjectGroup}/${TeacherHomeFragment.currentClassSelected!!.subjectCode}"
+            mStorageRef.child(filePath).putFile(pdfUri!!).addOnCompleteListener {
+                if (it.isSuccessful) {
+                    it.result!!.storage.downloadUrl.addOnCompleteListener { downloadUrl ->
+                        uploadDownloadUrl(downloadUrl.result.toString(), DBRef_Attendence)
+                        showToastShort("Result Attendencce Successfully!!!")
+                        tv_chooseAttendence.text = "Choose Attendence"
+                        pb_uploadingAttendence.hide()
+                    }
+                } else {
+                    tv_chooseAttendence.text = "Choose Attendence"
+                    showToastShort("Failed To Upload Attendence\nTry Again!!")
+                    pb_uploadingAttendence.hide()
+                }
+            }
+        } else {
+            tv_chooseAttendence.text = "Choose Attendece"
+            showToastShort("Please Select A PDF File First Than Click Upload")
+        }
     }
 
 

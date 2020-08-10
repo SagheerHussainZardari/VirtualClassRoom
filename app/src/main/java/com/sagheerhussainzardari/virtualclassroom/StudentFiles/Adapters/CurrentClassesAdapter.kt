@@ -1,5 +1,6 @@
 package com.sagheerhussainzardari.virtualclassroom.StudentFiles.Adapters
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -29,6 +30,7 @@ class CurrentClassesAdapter(
         return currectClassesList.size
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: MyViewModel, position: Int) {
 
         holder.view.tv_classTeacherName_recycler_currentclassess.text =
