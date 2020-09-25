@@ -20,14 +20,13 @@ import com.sagheerhussainzardari.easyandroid.hide
 import com.sagheerhussainzardari.easyandroid.show
 import com.sagheerhussainzardari.easyandroid.showToastLong
 import com.sagheerhussainzardari.easyandroid.showToastShort
-import com.sagheerhussainzardari.virtualclassroom.DBRef_Assignments
-import com.sagheerhussainzardari.virtualclassroom.DBRef_Attendence
-import com.sagheerhussainzardari.virtualclassroom.DBRef_Results
-import com.sagheerhussainzardari.virtualclassroom.R
+import com.sagheerhussainzardari.virtualclassroom.*
 import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Fragments.TeacherHomeFragment
 import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Models.ClassesTaughtByThisTeacherModel
 import kotlinx.android.synthetic.main.fragment_teacher_upload_attendence.*
+import kotlinx.android.synthetic.main.fragment_teacher_upload_course_material.*
 import kotlinx.android.synthetic.main.fragment_teacher_upload_results.*
+import kotlinx.android.synthetic.main.fragment_teacher_upload_results.tv_chooseResult
 import kotlinx.android.synthetic.main.fragment_teacher_uploadassignment.*
 import kotlinx.android.synthetic.main.nav_header_teacher.view.*
 import java.io.File
@@ -232,7 +231,7 @@ class TeacherHomeActivity : AppCompatActivity() {
                 if (it.isSuccessful) {
                     it.result!!.storage.downloadUrl.addOnCompleteListener { downloadUrl ->
                         uploadDownloadUrl(downloadUrl.result.toString(), DBRef_Attendence)
-                        showToastShort("Result Attendencce Successfully!!!")
+                        showToastShort("Result Attendence Successfully!!!")
                         tv_chooseAttendence.text = "Choose Attendence"
                         pb_uploadingAttendence.hide()
                     }
@@ -244,6 +243,34 @@ class TeacherHomeActivity : AppCompatActivity() {
             }
         } else {
             tv_chooseAttendence.text = "Choose Attendece"
+            showToastShort("Please Select A PDF File First Than Click Upload")
+        }
+    }
+
+    fun uploadCourseMaterial() {
+        if (pdfUri != null) {
+            showToastShort("Please Wait Uploading Course Material")
+            pb_uploadingCourseMaterial.setOnClickListener { }
+            pb_uploadingCourseMaterial.show()
+
+            val filePath =
+                "CourseMaterial/$teacherFaculty/$teacherDept/${TeacherHomeFragment.currentClassSelected!!.subjectDegree}/${TeacherHomeFragment.currentClassSelected!!.subjectTime}/${TeacherHomeFragment.currentClassSelected!!.subjectBatch}/${TeacherHomeFragment.currentClassSelected!!.subjectGroup}/${TeacherHomeFragment.currentClassSelected!!.subjectCode}"
+            mStorageRef.child(filePath).putFile(pdfUri!!).addOnCompleteListener {
+                if (it.isSuccessful) {
+                    it.result!!.storage.downloadUrl.addOnCompleteListener { downloadUrl ->
+                        uploadDownloadUrl(downloadUrl.result.toString(), DBRef_CourseMaterial)
+                        showToastShort("Uploaded Course Material Successfully!!!")
+                        tv_chooseCourseMaterial.text = "Choose Course Material"
+                        pb_uploadingCourseMaterial.hide()
+                    }
+                } else {
+                    tv_chooseCourseMaterial.text = "Choose Course"
+                    showToastShort("Failed To Upload Course Material\nTry Again!!")
+                    pb_uploadingCourseMaterial.hide()
+                }
+            }
+        } else {
+            tv_chooseCourseMaterial.text = "Choose Course Material"
             showToastShort("Please Select A PDF File First Than Click Upload")
         }
     }

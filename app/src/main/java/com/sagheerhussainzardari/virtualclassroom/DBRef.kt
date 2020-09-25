@@ -9,5 +9,6 @@ var DBRef_Teachers = DBRef_Base.child("Teachers")
 var DBRef_Assignments = DBRef_Base.child("Assignments")
 var DBRef_Results = DBRef_Base.child("Results")
 var DBRef_Attendence = DBRef_Base.child("Attendence")
+var DBRef_CourseMaterial = DBRef_Base.child("CourseMaterial")
 
 var DBRef_Subjects = DBRef_Base.child("Subjects")

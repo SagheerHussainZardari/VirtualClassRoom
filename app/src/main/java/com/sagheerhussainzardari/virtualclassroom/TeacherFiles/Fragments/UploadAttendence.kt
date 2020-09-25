@@ -46,7 +46,7 @@ class UploadAttendence : Fragment() {
                 context?.showToastShort("Opening Pdf In Browser!!!")
                 openLinkInBrowser(downloadUrl, requireContext())
             } else {
-                context?.showToastLong("Your Haven't Uploaded Any Results For ${TeacherHomeFragment.currentClassSelected!!.subjectName} Yet")
+                context?.showToastLong("Your Haven't Uploaded Any Attendence For ${TeacherHomeFragment.currentClassSelected!!.subjectName} Yet")
             }
         }
 
