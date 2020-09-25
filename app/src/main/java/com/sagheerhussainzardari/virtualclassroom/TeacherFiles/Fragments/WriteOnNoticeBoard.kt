@@ -62,11 +62,11 @@ class WriteOnNoticeBoard : Fragment() {
                     if (snapshot.value.toString() != "null") {
                         tv_currentNote.text = snapshot.value.toString();
                     } else {
-                        Toast.makeText(context, "Not Note Uploaded Yet!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, "No Note Uploaded Yet!", Toast.LENGTH_SHORT).show()
                     }
                 }
             })
-    }
 
+    }
 
 }
