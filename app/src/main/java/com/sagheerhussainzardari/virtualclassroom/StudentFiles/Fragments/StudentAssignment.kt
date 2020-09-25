@@ -17,7 +17,6 @@ import com.sagheerhussainzardari.virtualclassroom.DBRef_Assignments
 import com.sagheerhussainzardari.virtualclassroom.DBRef_Subjects
 import com.sagheerhussainzardari.virtualclassroom.R
 import com.sagheerhussainzardari.virtualclassroom.StudentFiles.StudentHomeActivity
-import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Fragments.TeacherHomeFragment
 import kotlinx.android.synthetic.main.fragment_student_assignment.*
 
 class StudentAssignment : Fragment() {
@@ -57,7 +56,7 @@ class StudentAssignment : Fragment() {
                 context?.showToastShort("Opening Pdf In Browser!!!")
                 openLinkInBrowser(downloadUrl, requireContext())
             } else {
-                context?.showToastLong("Your Haven't Uploaded Any Assignments For ${TeacherHomeFragment.currentClassSelected!!.subjectName} Yet")
+                context?.showToastLong("Your Haven't Uploaded Any Assignments For This Subject Yet")
             }
         }
     }
@@ -110,7 +109,9 @@ class StudentAssignment : Fragment() {
                         pb_studentAssignment.visibility = View.GONE
 
                     } else {
-                        tv_assignmentName_student.text = "No Assignemnt"
+                        tv_assignmentName_student.text = "No Result"
+                        downloadUrl = "";
+
                         pb_studentAssignment.visibility = View.GONE
                         context?.showToastLong("Your Haven't Uploaded Any Assignments For $subjectName Yet")
                     }

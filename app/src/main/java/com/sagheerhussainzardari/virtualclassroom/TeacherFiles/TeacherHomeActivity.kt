@@ -26,7 +26,6 @@ import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Models.ClassesTau
 import kotlinx.android.synthetic.main.fragment_teacher_upload_attendence.*
 import kotlinx.android.synthetic.main.fragment_teacher_upload_course_material.*
 import kotlinx.android.synthetic.main.fragment_teacher_upload_results.*
-import kotlinx.android.synthetic.main.fragment_teacher_upload_results.tv_chooseResult
 import kotlinx.android.synthetic.main.fragment_teacher_uploadassignment.*
 import kotlinx.android.synthetic.main.nav_header_teacher.view.*
 import java.io.File
@@ -231,7 +230,7 @@ class TeacherHomeActivity : AppCompatActivity() {
                 if (it.isSuccessful) {
                     it.result!!.storage.downloadUrl.addOnCompleteListener { downloadUrl ->
                         uploadDownloadUrl(downloadUrl.result.toString(), DBRef_Attendence)
-                        showToastShort("Result Attendence Successfully!!!")
+                        showToastShort("Attendence Uploaded Successfully!!!")
                         tv_chooseAttendence.text = "Choose Attendence"
                         pb_uploadingAttendence.hide()
                     }
