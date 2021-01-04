@@ -64,7 +64,7 @@ class CoursesMaterial : Fragment() {
 
 
     private fun setSubjectSpinner() {
-        pb_studentCourseMaterial.visibility = View.VISIBLE
+        pb_studentCourseMaterial?.visibility = View.VISIBLE
 
         DBRef_Subjects
             .child(StudentHomeActivity.studentFaculity)
@@ -82,7 +82,7 @@ class CoursesMaterial : Fragment() {
                             subject.key.toString() + " " + subject.child("subjectName").value.toString()
                         )
                     }
-                    spinner_selectsubject_studentCourseMaterial.adapter =
+                    spinner_selectsubject_studentCourseMaterial?.adapter =
                         ArrayAdapter<String>(requireContext(), R.layout.spinner_layout, subjects)
 
 
@@ -107,14 +107,14 @@ class CoursesMaterial : Fragment() {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.hasChildren()) {
                         downloadUrl = snapshot.child("downloadUrl").value.toString()
-                        tv_courseMaterialName.text = "$subjectName's Course Material";
-                        pb_studentCourseMaterial.visibility = View.GONE
+                        tv_courseMaterialName?.text = "$subjectName's Course Material";
+                        pb_studentCourseMaterial?.visibility = View.GONE
 
                     } else {
-                        tv_courseMaterialName.text = "No Result"
+                        tv_courseMaterialName?.text = "No Result"
                         downloadUrl = "";
 
-                        pb_studentCourseMaterial.visibility = View.GONE
+                        pb_studentCourseMaterial?.visibility = View.GONE
                         context?.showToastLong("Your Teacher Haven't Uploaded Any Course Material For $subjectName Yet")
                     }
                 }

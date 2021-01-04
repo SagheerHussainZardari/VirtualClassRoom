@@ -104,9 +104,9 @@ class TeacherLoginActivity : AppCompatActivity(), AuthCallBack {
     override fun onSignUpSuccess() {}
     fun onForgotPassword_TeacherLoginAcitivity(view: View) {
 
-        layout_forgotpasswordteacher.show()
+        layout_forgotpasswordteacher?.show()
         layout_forgotpassword_View.setOnClickListener {
-            layout_forgotpasswordteacher.hide()
+            layout_forgotpasswordteacher?.hide()
         }
         layout_forgotpassword_LinearLayout.setOnClickListener { }
         btn_resetPassword_forgotpassword.setOnClickListener {
@@ -115,7 +115,7 @@ class TeacherLoginActivity : AppCompatActivity(), AuthCallBack {
                     .addOnCompleteListener {
                         if (it.isSuccessful) {
                             showToastLong("Password Reset Link Sent!!\nCheck Your Inbox!")
-                            layout_forgotpasswordteacher.hide()
+                            layout_forgotpasswordteacher?.hide()
                         } else {
                             showToastLong("Password Reset Failed!\n${it.exception!!.localizedMessage}")
                         }

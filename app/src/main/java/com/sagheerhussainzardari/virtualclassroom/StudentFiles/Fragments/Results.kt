@@ -63,7 +63,7 @@ class Results : Fragment() {
 
 
     private fun setSubjectSpinner() {
-        pb_studentResult.visibility = View.VISIBLE
+        pb_studentResult?.visibility = View.VISIBLE
 
         DBRef_Subjects
             .child(StudentHomeActivity.studentFaculity)
@@ -81,7 +81,7 @@ class Results : Fragment() {
                             subject.key.toString() + " " + subject.child("subjectName").value.toString()
                         )
                     }
-                    spinner_selectsubject_studentResult.adapter =
+                    spinner_selectsubject_studentResult?.adapter =
                         ArrayAdapter<String>(requireContext(), R.layout.spinner_layout, subjects)
 
 
@@ -106,13 +106,13 @@ class Results : Fragment() {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.hasChildren()) {
                         downloadUrl = snapshot.child("downloadUrl").value.toString()
-                        tv_resultName.text = "$subjectName's Result";
-                        pb_studentResult.visibility = View.GONE
+                        tv_resultName?.text = "$subjectName's Result";
+                        pb_studentResult?.visibility = View.GONE
 
                     } else {
-                        tv_resultName.text = "No Result"
+                        tv_resultName?.text = "No Result"
                         downloadUrl = "";
-                        pb_studentResult.visibility = View.GONE
+                        pb_studentResult?.visibility = View.GONE
                         context?.showToastLong("Your Teacher Haven't Uploaded Any Assignments For $subjectName Yet")
                     }
                 }

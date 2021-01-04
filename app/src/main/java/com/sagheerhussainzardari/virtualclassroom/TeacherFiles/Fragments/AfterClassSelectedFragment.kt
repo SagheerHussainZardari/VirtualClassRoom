@@ -43,9 +43,9 @@ class AfterClassSelectedFragment : Fragment() {
             (activity as TeacherHomeActivity).openFragment(R.id.nav_uploadCourseMaterial)
         }
 
-        card_chat_with_students.setOnClickListener {
-            (activity as TeacherHomeActivity).openFragment(R.id.nav_chatWithStudents)
-        }
+//        card_chat_with_students.setOnClickListener {
+//            (activity as TeacherHomeActivity).openFragment(R.id.nav_chatWithStudents)
+//        }
 
         card_write_on_noticeboard.setOnClickListener {
             (activity as TeacherHomeActivity).openFragment(R.id.nav_writeOnNoticeBoard)

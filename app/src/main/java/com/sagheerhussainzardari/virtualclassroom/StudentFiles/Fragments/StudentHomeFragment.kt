@@ -44,9 +44,9 @@ class StudentHomeFragment : Fragment() {
             (activity as StudentHomeActivity).openFragment(R.id.nav_coursesMaterial)
         }
 
-        card_chat_with_teacher.setOnClickListener {
-            (activity as StudentHomeActivity).openFragment(R.id.nav_chatWithTeacher)
-        }
+//        card_chat_with_teacher.setOnClickListener {
+//            (activity as StudentHomeActivity).openFragment(R.id.nav_chatWithTeacher)
+//        }
 
         card_chat_with_class_fellow.setOnClickListener {
             (activity as StudentHomeActivity).openFragment(R.id.nav_chatWithClassFellows)

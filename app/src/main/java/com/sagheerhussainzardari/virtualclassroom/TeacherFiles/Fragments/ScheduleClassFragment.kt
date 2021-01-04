@@ -16,6 +16,7 @@ import com.sagheerhussainzardari.easyandroid.showToastShort
 import com.sagheerhussainzardari.virtualclassroom.DBRef_ScheduledClasses
 import com.sagheerhussainzardari.virtualclassroom.R
 import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherHomeActivity
+import kotlinx.android.synthetic.main.fragment_student_chat_with_class_fellows.*
 import kotlinx.android.synthetic.main.fragment_teacher_scheduleclass.*
 
 class ScheduleClassFragment : Fragment() {
@@ -48,7 +49,7 @@ class ScheduleClassFragment : Fragment() {
 
         setUpCurrentlyAddedClass()
 
-        btn_addClass_ScheduleClassFragmentTeacher.setOnClickListener {
+        btn_addClass_ScheduleClassFragmentTeacher?.setOnClickListener {
             val zoomID = et_zoomID.text.toString()
             val zoomPassword = et_zoomPassword.text.toString()
             val zoomLink = et_zoomLink.text.toString()
@@ -60,7 +61,7 @@ class ScheduleClassFragment : Fragment() {
                     if (zoomLink.isNotEmpty()) { /*Patterns.WEB_URL.matcher(zoomLink).matches()*/
                         if (zoomTime.isNotEmpty()) {
                             if (zoomDate.isNotEmpty()) {
-                                pb_schceduleClass.show()
+                                pb_schceduleClass?.show()
 
                                 baseRefForStoringClassInformation.child("classDate")
                                     .setValue(zoomDate)
@@ -82,9 +83,9 @@ class ScheduleClassFragment : Fragment() {
                                         if (it.isSuccessful) {
                                             context?.showToastShort("Class Scheduled Complete!!!")
                                             setUpCurrentlyAddedClass()
-                                            pb_schceduleClass.hide()
+                                            pb_schceduleClass?.hide()
                                         } else {
-                                            pb_schceduleClass.hide()
+                                            pb_schceduleClass?.hide()
                                             context?.showToastShort("Class Not Added Something Went Wrong")
                                         }
                                     }

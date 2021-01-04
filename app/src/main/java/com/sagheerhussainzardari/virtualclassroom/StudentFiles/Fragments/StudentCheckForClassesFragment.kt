@@ -38,7 +38,7 @@ class StudentCheckForClassesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        pb_checkForClasses.show()
+        pb_checkForClasses?.show()
         DBRef_ScheduledClasses
             .child(StudentHomeActivity.studentFaculity)
             .child(StudentHomeActivity.studentDept)
@@ -48,7 +48,7 @@ class StudentCheckForClassesFragment : Fragment() {
             .child(StudentHomeActivity.studentGroup)
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onCancelled(error: DatabaseError) {
-                    pb_checkForClasses.hide()
+                    pb_checkForClasses?.hide()
                 }
 
                 override fun onDataChange(snapshot: DataSnapshot) {
@@ -80,18 +80,18 @@ class StudentCheckForClassesFragment : Fragment() {
             setUpRecyclerView()
 
         } else {
-            pb_checkForClasses.hide()
+            pb_checkForClasses?.hide()
             context?.showToastLong("You Have No Classes Yet")
         }
 
     }
 
     private fun setUpRecyclerView() {
-        rv_currentClasses.setHasFixedSize(true)
-        rv_currentClasses.layoutManager = LinearLayoutManager(context)
-        rv_currentClasses.adapter = CurrentClassesAdapter(requireContext(), currentClasses)
+        rv_currentClasses?.setHasFixedSize(true)
+        rv_currentClasses?.layoutManager = LinearLayoutManager(context)
+        rv_currentClasses?.adapter = CurrentClassesAdapter(requireContext(), currentClasses)
 
-        pb_checkForClasses.hide()
+        pb_checkForClasses?.hide()
 
     }
 

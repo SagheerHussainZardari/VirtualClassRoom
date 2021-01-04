@@ -64,7 +64,7 @@ class Attendence : Fragment() {
 
 
     private fun setSubjectSpinner() {
-        pb_studentAttendence.visibility = View.VISIBLE
+        pb_studentAttendence?.visibility = View.VISIBLE
 
         DBRef_Subjects
             .child(StudentHomeActivity.studentFaculity)
@@ -82,7 +82,7 @@ class Attendence : Fragment() {
                             subject.key.toString() + " " + subject.child("subjectName").value.toString()
                         )
                     }
-                    spinner_selectsubject_studentAttendence.adapter =
+                    spinner_selectsubject_studentAttendence?.adapter =
                         ArrayAdapter<String>(requireContext(), R.layout.spinner_layout, subjects)
 
 
@@ -107,14 +107,14 @@ class Attendence : Fragment() {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.hasChildren()) {
                         downloadUrl = snapshot.child("downloadUrl").value.toString()
-                        tv_attendenceName.text = "$subjectName's Attendence";
-                        pb_studentAttendence.visibility = View.GONE
+                        tv_attendenceName?.text = "$subjectName's Attendence";
+                        pb_studentAttendence?.visibility = View.GONE
 
                     } else {
-                        tv_attendenceName.text = "No Result"
+                        tv_attendenceName?.text = "No Result"
                         downloadUrl = "";
 
-                        pb_studentAttendence.visibility = View.GONE
+                        pb_studentAttendence?.visibility = View.GONE
                         context?.showToastLong("Your Teacher Haven't Uploaded Any Attendence For $subjectName Yet")
                     }
                 }

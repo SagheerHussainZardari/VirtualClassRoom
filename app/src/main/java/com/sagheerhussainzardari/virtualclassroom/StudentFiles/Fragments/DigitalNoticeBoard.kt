@@ -68,7 +68,7 @@ class DigitalNoticeBoard : Fragment() {
                             subject.key.toString() + " " + subject.child("subjectName").value.toString()
                         )
                     }
-                    spinner_selectsubject_studentNoticeBoard.adapter =
+                    spinner_selectsubject_studentNoticeBoard?.adapter =
                         ArrayAdapter<String>(requireContext(), R.layout.spinner_layout, subjects)
 
 
@@ -88,15 +88,15 @@ class DigitalNoticeBoard : Fragment() {
             .child(subject) // replace with the subject selected by the studetn from spinner
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onCancelled(error: DatabaseError) {
-                    pb_studentNoticeBoard.visibility = View.GONE;
+                    pb_studentNoticeBoard?.visibility = View.GONE;
 
                 }
 
                 override fun onDataChange(snapshot: DataSnapshot) {
-                    pb_studentNoticeBoard.visibility = View.GONE;
+                    pb_studentNoticeBoard?.visibility = View.GONE;
 
                     if (snapshot.hasChildren()) {
-                        tv_currentNote.text = snapshot.child("note").value.toString();
+                        tv_currentNote?.text = snapshot.child("note").value.toString();
                     } else {
                         Toast.makeText(context, "Has No Not", Toast.LENGTH_SHORT).show()
 

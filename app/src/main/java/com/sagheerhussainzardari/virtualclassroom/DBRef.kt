@@ -12,4 +12,7 @@ var DBRef_Attendence = DBRef_Base.child("Attendence")
 var DBRef_CourseMaterial = DBRef_Base.child("CourseMaterial")
 
 var DBRef_Subjects = DBRef_Base.child("Subjects")
+
 var DBRef_Notes = DBRef_Base.child("Notes")
+
+var DBRef_ChatStdToStd = DBRef_Base.child("ChatStdToStd")

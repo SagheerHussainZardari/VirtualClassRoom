@@ -104,20 +104,20 @@ class TeacherHomeFragment : Fragment() {
             setUpRecyclerView()
 
         } else {
-            pb_teachersClasses.hide()
+            pb_teachersClasses?.hide()
             context?.showToastLong("You Have No Classes To Teach")
         }
     }
     private fun setUpRecyclerView() {
-        rv_teacherclasses.setHasFixedSize(true)
-        rv_teacherclasses.layoutManager = LinearLayoutManager(context)
-        rv_teacherclasses.adapter = ClassesTaughtByThisTeacherAdapter(
+        rv_teacherclasses?.setHasFixedSize(true)
+        rv_teacherclasses?.layoutManager = LinearLayoutManager(context)
+        rv_teacherclasses?.adapter = ClassesTaughtByThisTeacherAdapter(
             requireContext(),
             classesTaughtByThisTeacherList,
             this
         )
 
-        pb_teachersClasses.hide()
+        pb_teachersClasses?.hide()
     }
 
 

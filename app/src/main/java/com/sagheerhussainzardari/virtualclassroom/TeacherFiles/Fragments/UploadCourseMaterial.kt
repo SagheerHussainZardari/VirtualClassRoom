@@ -56,7 +56,7 @@ class UploadCourseMaterial : Fragment() {
     }
 
     private fun getDownloadUrlIfAvaiable(ref: DatabaseReference) {
-        tv_courseMaterialName.text = TeacherHomeFragment.currentClassSelected!!.subjectName
+        tv_courseMaterialName?.text = TeacherHomeFragment.currentClassSelected!!.subjectName
         val baseRefForStoringClassInformation = ref
             .child(TeacherHomeActivity.teacherFaculty)
             .child(TeacherHomeActivity.teacherDept)

@@ -41,7 +41,7 @@ class WriteOnNoticeBoard : Fragment() {
                 .child(TeacherHomeFragment.currentClassSelected!!.subjectCode).child("note")
                 .setValue(note);
 
-            tv_currentNote.text = note;
+            tv_currentNote?.text = note;
             Toast.makeText(context, "Note Uploaded Successfully!!!", Toast.LENGTH_SHORT).show()
         }
     }
@@ -60,7 +60,7 @@ class WriteOnNoticeBoard : Fragment() {
 
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.value.toString() != "null") {
-                        tv_currentNote.text = snapshot.value.toString();
+                        tv_currentNote?.text = snapshot.value.toString();
                     } else {
                         Toast.makeText(context, "No Note Uploaded Yet!", Toast.LENGTH_SHORT).show()
                     }
