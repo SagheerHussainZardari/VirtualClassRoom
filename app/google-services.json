@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "252672793365",
+    "firebase_url": "https://virtualclassroom-4f1a4.firebaseio.com",
+    "project_id": "virtualclassroom-4f1a4",
+    "storage_bucket": "virtualclassroom-4f1a4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:252672793365:android:7f79e9630ffeefe6d9271c",
+        "android_client_info": {
+          "package_name": "com.sagheerhussainzardari.virtualclassroom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "252672793365-muq0n685a3nqo2ls4s3fmqg7gq6g6o5k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALHehA9FcJvsgVZMAeGVOGxQMlnq8vsPM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "252672793365-muq0n685a3nqo2ls4s3fmqg7gq6g6o5k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

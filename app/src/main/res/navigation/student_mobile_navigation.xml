@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/student_mobile_navigation"
+    app:startDestination="@+id/nav_studentHomeFragment">
+
+
+    <fragment
+        android:id="@+id/nav_studentHomeFragment"
+        android:name="com.sagheerhussainzardari.virtualclassroom.StudentFiles.Fragments.StudentHomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_student_home">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_studentLogoutFragment"
+        android:name="com.sagheerhussainzardari.virtualclassroom.StudentFiles.Fragments.StudentLogoutFragment"
+        android:label="Logout"
+        tools:layout="@layout/fragment_student_logout" />
+
+    <fragment
+        android:id="@+id/nav_studentCheckForClassesFragment"
+        android:name="com.sagheerhussainzardari.virtualclassroom.StudentFiles.Fragments.StudentCheckForClassesFragment"
+        android:label="Currently Scheduled Classes"
+        tools:layout="@layout/fragment_student_checkforclasses" />
+    <fragment
+        android:id="@+id/nav_studentAssignment"
+        android:name="com.sagheerhussainzardari.virtualclassroom.StudentFiles.Fragments.StudentAssignment"
+        android:label="Assignments"
+        tools:layout="@layout/fragment_student_assignment" />
+    <fragment
+        android:id="@+id/nav_results"
+        android:name="com.sagheerhussainzardari.virtualclassroom.StudentFiles.Fragments.Results"
+        android:label="Results"
+        tools:layout="@layout/fragment_student_results" />
+    <fragment
+        android:id="@+id/nav_attendence"
+        android:name="com.sagheerhussainzardari.virtualclassroom.StudentFiles.Fragments.Attendence"
+        android:label="Attendence"
+        tools:layout="@layout/fragment_student_attendence" />
+    <fragment
+        android:id="@+id/nav_coursesMaterial"
+        android:name="com.sagheerhussainzardari.virtualclassroom.StudentFiles.Fragments.CoursesMaterial"
+        android:label="Courses Material"
+        tools:layout="@layout/fragment_student_courses_material" />
+    <fragment
+        android:id="@+id/nav_chatWithTeacher"
+        android:name="com.sagheerhussainzardari.virtualclassroom.StudentFiles.Fragments.ChatWithTeacher"
+        android:label="Chat With Teacher"
+        tools:layout="@layout/fragment_student_chat_with_teacher" />
+    <fragment
+        android:id="@+id/nav_chatWithClassFellows"
+        android:name="com.sagheerhussainzardari.virtualclassroom.StudentFiles.Fragments.ChatWithClassFellows"
+        android:label="Chat With Class Fellows"
+        tools:layout="@layout/fragment_student_chat_with_class_fellows" />
+    <fragment
+        android:id="@+id/nav_digitalNoticeBoard"
+        android:name="com.sagheerhussainzardari.virtualclassroom.StudentFiles.Fragments.DigitalNoticeBoard"
+        android:label="Digital Notice Board"
+        tools:layout="@layout/fragment_student_digital_notice_board" />
+
+
+</navigation>

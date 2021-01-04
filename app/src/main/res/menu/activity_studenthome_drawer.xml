@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+    <item android:title="Main Menu">
+        <menu>
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/nav_studentHomeFragment"
+                    android:icon="@drawable/ic_email"
+                    android:title="Student Home" />
+
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Others">
+        <menu>
+            <item
+                android:id="@+id/nav_studentLogoutFragment"
+                android:icon="@drawable/ic_person"
+                android:title="Logout" />
+        </menu>
+    </item>
+
+</menu>

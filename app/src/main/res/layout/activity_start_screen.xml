@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StartScreenActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="64dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:paddingLeft="32dp"
+            android:paddingTop="32dp"
+            android:paddingRight="32dp"
+            android:src="@drawable/logo" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:lines="2"
+            android:paddingLeft="32dp"
+            android:paddingRight="32dp"
+            android:shadowColor="@color/colorAccent"
+            android:shadowDx="3.0"
+            android:shadowDy="3.0"
+            android:shadowRadius="3.0"
+            android:text="Virtual Class Room"
+            android:textColor="@color/colorPrimary"
+            android:textSize="28sp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_loginAsTeacher_StartScreen"
+            style="@style/style_button"
+            android:layout_marginTop="48dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:onClick="onLoginAsTeacherClicked"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="Login As Teacher"
+            app:cardCornerRadius="10dp"
+            app:elevation="32dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/gradientback_withroundcorners">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Login As Teacher"
+                    android:textColor="#fff"
+                    android:textSize="20sp" />
+
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_loginAsStudent_StartScreen"
+            style="@style/style_button"
+            android:layout_marginTop="32dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:onClick="onLoginAsStudentClicked"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            app:cardCornerRadius="10dp"
+            app:elevation="32dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/gradientback_withroundcorners">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Login As Student"
+                    android:textColor="#fff"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_TermsAndConditions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="bottom|center"
+
+        android:onClick="onTermsAndConditionsClicked"
+        android:paddingTop="8dp"
+        android:text="Terms and Conditions"
+        android:textColor="@color/colorAccent"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

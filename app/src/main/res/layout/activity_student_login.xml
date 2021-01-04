@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".StudentFiles.StudentLoginActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginLeft="32dp"
+                android:paddingRight="32dp"
+                android:paddingLeft="32dp"
+                android:paddingTop="32dp"
+                android:layout_marginRight="32dp"
+                android:src="@drawable/logo" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Student Login"
+                android:gravity="center"
+                android:textSize="36sp"
+                android:shadowColor="@color/colorAccent"
+                android:shadowDx="3.0"
+                android:shadowDy="3.0"
+                android:shadowRadius="3.0"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginBottom="64dp" />
+
+            <EditText
+                android:id="@+id/et_email_loginStudent"
+                style="@style/style_edittext"
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="8dp"
+                android:paddingRight="16dp"
+                android:drawableTint="@color/colorPrimary"
+                android:hint="Email" />
+
+            <EditText
+                android:id="@+id/et_password_loginStudent"
+                style="@style/style_edittext"
+                android:drawableStart="@drawable/ic_password"
+                android:paddingRight="16dp"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/colorPrimary"
+                android:hint="Password" />
+
+            <TextView
+                android:id="@+id/tv_ForgotPasswordLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="48dp"
+                android:layout_marginTop="4dp"
+                android:onClick="onForgotPassword_StudentLoginAcitivity"
+                android:text="Forgot Password?"
+                android:textColor="@color/colorPrimary" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnLogin_StudentLoginActivity"
+                style="@style/style_button"
+                android:layout_marginTop="32dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:onClick="onLoginStudentClicked"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                app:cardCornerRadius="10dp"
+                app:elevation="32dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/gradientback_withroundcorners">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="Login"
+                        android:textColor="#fff"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <include
+        android:id="@+id/pb_studentLoginActvity"
+        layout="@layout/layout_progressbar"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/layout_forgotpassword"
+        layout="@layout/layout_forgotpasswordstudent"
+        android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
