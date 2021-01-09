@@ -1,7 +1,6 @@
 package com.sagheerhussainzardari.virtualclassroom.StudentFiles.Fragments
 
 import android.os.Bundle
-import android.renderscript.Sampler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,28 +12,22 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.sagheerhussainzardari.virtualclassroom.DBRef_ChatStdToStd
 import com.sagheerhussainzardari.virtualclassroom.R
-import com.sagheerhussainzardari.virtualclassroom.StudentFiles.Adapters.CurrentClassesAdapter
 import com.sagheerhussainzardari.virtualclassroom.StudentFiles.Adapters.MessageAdapter
 import com.sagheerhussainzardari.virtualclassroom.StudentFiles.Models.StudToStudChatModel
-import kotlinx.android.synthetic.main.fragment_student_chat_with_class_fellows.*
 import com.sagheerhussainzardari.virtualclassroom.StudentFiles.StudentHomeActivity
 import com.sagheerhussainzardari.virtualclassroom.StudentFiles.StudentHomeActivity.Companion.studentBatch
 import com.sagheerhussainzardari.virtualclassroom.StudentFiles.StudentHomeActivity.Companion.studentDegree
 import com.sagheerhussainzardari.virtualclassroom.StudentFiles.StudentHomeActivity.Companion.studentDept
 import com.sagheerhussainzardari.virtualclassroom.StudentFiles.StudentHomeActivity.Companion.studentFaculity
 import com.sagheerhussainzardari.virtualclassroom.StudentFiles.StudentHomeActivity.Companion.studentGroup
-import com.sagheerhussainzardari.virtualclassroom.StudentFiles.StudentHomeActivity.Companion.studentRollNumber
 import com.sagheerhussainzardari.virtualclassroom.StudentFiles.StudentHomeActivity.Companion.studentTime
-import kotlinx.android.synthetic.main.fragment_student_checkforclasses.*
-import java.lang.Exception
-import java.text.MessageFormat
-import java.text.SimpleDateFormat
+import kotlinx.android.synthetic.main.fragment_student_chat_with_class_fellows.*
 import java.util.*
 
 class ChatWithClassFellows : Fragment() {
 
     companion object {
-        var listOfMessages = ArrayList<StudToStudChatModel>();
+        var listOfMessages = ArrayList<StudToStudChatModel>()
     }
 
     override fun onCreateView(
@@ -61,7 +54,7 @@ class ChatWithClassFellows : Fragment() {
                 var studentTime = StudentHomeActivity.studentTime
                 var studentBatch = StudentHomeActivity.studentBatch
                 var studentGroup = StudentHomeActivity.studentGroup
-                var studentRollNumber = StudentHomeActivity.studentRollNumber;
+                var studentRollNumber = StudentHomeActivity.studentRollNumber
 
                 var stdChatRef = DBRef_ChatStdToStd
                     .child(studentFaculity)
@@ -69,7 +62,7 @@ class ChatWithClassFellows : Fragment() {
                     .child(studentDegree)
                     .child(studentTime)
                     .child(studentBatch)
-                    .child(studentGroup).push().key.toString();
+                    .child(studentGroup).push().key.toString()
 
                 var messageStoreRef = DBRef_ChatStdToStd
                     .child(studentFaculity)
@@ -80,15 +73,21 @@ class ChatWithClassFellows : Fragment() {
                     .child(studentGroup)
                     .child(stdChatRef)
 
-                if(et_message.text.toString().isNotEmpty()){
+                if(et_message.text.toString().isNotEmpty()) {
 
-                    messageStoreRef.child("text").setValue(et_message.text.toString());
-                    messageStoreRef.child("datetime").setValue(System.currentTimeMillis());
-                    messageStoreRef.child("rollnumber").setValue(studentRollNumber);
+                    messageStoreRef.child("text").setValue(et_message.text.toString())
+                    messageStoreRef.child("datetime").setValue(System.currentTimeMillis())
+                    messageStoreRef.child("rollnumber").setValue(studentRollNumber)
+
+                    et_message.setText("")
 
                 }else{
-                    et_message.setText("");
-                    Toast.makeText(requireContext(), "Message Field Can Not Be Empty", Toast.LENGTH_SHORT).show()
+                    et_message.setText("")
+                    Toast.makeText(
+                        requireContext(),
+                        "Message Field Can Not Be Empty",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
 
             }
@@ -113,7 +112,7 @@ class ChatWithClassFellows : Fragment() {
                     override fun onCancelled(error: DatabaseError) {}
 
                     override fun onDataChange(snapshot: DataSnapshot) {
-                        listOfMessages.clear();
+                        listOfMessages.clear()
 
 
                         for (document in snapshot.children){
@@ -126,6 +125,7 @@ class ChatWithClassFellows : Fragment() {
                             messageRecyclerView?.layoutManager = LinearLayoutManager(context)
                             messageRecyclerView?.adapter = MessageAdapter(requireContext(), listOfMessages)
 
+                            messageRecyclerView?.smoothScrollToPosition(listOfMessages.size)
                         }catch (e: Exception){
 
                         }

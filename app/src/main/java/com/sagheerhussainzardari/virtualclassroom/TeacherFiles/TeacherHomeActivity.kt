@@ -164,8 +164,8 @@ class TeacherHomeActivity : AppCompatActivity() {
 
         if (pdfUri != null) {
             showToastShort("Please Wait Uploading Assignment")
-            pb_uploadingAssignment.setOnClickListener { }
-            pb_uploadingAssignment.show()
+            pb_uploadingAssignment?.setOnClickListener { }
+            pb_uploadingAssignment?.show()
 
             val filePath =
                 "Assignments/$teacherFaculty/$teacherDept/${TeacherHomeFragment.currentClassSelected!!.subjectDegree}/${TeacherHomeFragment.currentClassSelected!!.subjectTime}/${TeacherHomeFragment.currentClassSelected!!.subjectBatch}/${TeacherHomeFragment.currentClassSelected!!.subjectGroup}/${TeacherHomeFragment.currentClassSelected!!.subjectCode}"
@@ -174,17 +174,17 @@ class TeacherHomeActivity : AppCompatActivity() {
                     it.result!!.storage.downloadUrl.addOnCompleteListener { downloadUrl ->
                         uploadDownloadUrl(downloadUrl.result.toString(), DBRef_Assignments)
                         showToastShort("Assignment Uploaded Successfully!!!")
-                        tv_chooseAssignment.text = "Choose Assignment"
-                        pb_uploadingAssignment.hide()
+                        tv_chooseAssignment?.text = "Choose Assignment"
+                        pb_uploadingAssignment?.hide()
                     }
                 } else {
-                    tv_chooseAssignment.text = "Choose Assignment"
+                    tv_chooseAssignment?.text = "Choose Assignment"
                     showToastShort("Failed To Upload Assignment\nTry Again!!")
-                    pb_uploadingAssignment.hide()
+                    pb_uploadingAssignment?.hide()
                 }
             }
         } else {
-            tv_chooseAssignment.text = "Choose Assignment"
+            tv_chooseAssignment?.text = "Choose Assignment"
             showToastShort("Please Select A PDF File First Than Click Upload")
         }
     }
@@ -193,8 +193,8 @@ class TeacherHomeActivity : AppCompatActivity() {
     fun uploadResults() {
         if (pdfUri != null) {
             showToastShort("Please Wait Uploading Results")
-            pb_uploadingResult.setOnClickListener { }
-            pb_uploadingResult.show()
+            pb_uploadingResult?.setOnClickListener { }
+            pb_uploadingResult?.show()
 
             val filePath =
                 "Results/$teacherFaculty/$teacherDept/${TeacherHomeFragment.currentClassSelected!!.subjectDegree}/${TeacherHomeFragment.currentClassSelected!!.subjectTime}/${TeacherHomeFragment.currentClassSelected!!.subjectBatch}/${TeacherHomeFragment.currentClassSelected!!.subjectGroup}/${TeacherHomeFragment.currentClassSelected!!.subjectCode}"
@@ -203,17 +203,17 @@ class TeacherHomeActivity : AppCompatActivity() {
                     it.result!!.storage.downloadUrl.addOnCompleteListener { downloadUrl ->
                         uploadDownloadUrl(downloadUrl.result.toString(), DBRef_Results)
                         showToastShort("Result Uploaded Successfully!!!")
-                        tv_chooseResult.text = "Choose Result"
-                        pb_uploadingResult.hide()
+                        tv_chooseResult?.text = "Choose Result"
+                        pb_uploadingResult?.hide()
                     }
                 } else {
-                    tv_chooseResult.text = "Choose Result"
+                    tv_chooseResult?.text = "Choose Result"
                     showToastShort("Failed To Upload Results\nTry Again!!")
-                    pb_uploadingResult.hide()
+                    pb_uploadingResult?.hide()
                 }
             }
         } else {
-            tv_chooseResult.text = "Choose Result"
+            tv_chooseResult?.text = "Choose Result"
             showToastShort("Please Select A PDF File First Than Click Upload")
         }
     }
@@ -221,8 +221,8 @@ class TeacherHomeActivity : AppCompatActivity() {
     fun uploadAttendence() {
         if (pdfUri != null) {
             showToastShort("Please Wait Uploading Attendence")
-            pb_uploadingAttendence.setOnClickListener { }
-            pb_uploadingAttendence.show()
+            pb_uploadingAttendence?.setOnClickListener { }
+            pb_uploadingAttendence?.show()
 
             val filePath =
                 "Attendence/$teacherFaculty/$teacherDept/${TeacherHomeFragment.currentClassSelected!!.subjectDegree}/${TeacherHomeFragment.currentClassSelected!!.subjectTime}/${TeacherHomeFragment.currentClassSelected!!.subjectBatch}/${TeacherHomeFragment.currentClassSelected!!.subjectGroup}/${TeacherHomeFragment.currentClassSelected!!.subjectCode}"
@@ -231,17 +231,17 @@ class TeacherHomeActivity : AppCompatActivity() {
                     it.result!!.storage.downloadUrl.addOnCompleteListener { downloadUrl ->
                         uploadDownloadUrl(downloadUrl.result.toString(), DBRef_Attendence)
                         showToastShort("Attendence Uploaded Successfully!!!")
-                        tv_chooseAttendence.text = "Choose Attendence"
-                        pb_uploadingAttendence.hide()
+                        tv_chooseAttendence?.text = "Choose Attendence"
+                        pb_uploadingAttendence?.hide()
                     }
                 } else {
-                    tv_chooseAttendence.text = "Choose Attendence"
+                    tv_chooseAttendence?.text = "Choose Attendence"
                     showToastShort("Failed To Upload Attendence\nTry Again!!")
-                    pb_uploadingAttendence.hide()
+                    pb_uploadingAttendence?.hide()
                 }
             }
         } else {
-            tv_chooseAttendence.text = "Choose Attendece"
+            tv_chooseAttendence?.text = "Choose Attendece"
             showToastShort("Please Select A PDF File First Than Click Upload")
         }
     }
@@ -249,8 +249,8 @@ class TeacherHomeActivity : AppCompatActivity() {
     fun uploadCourseMaterial() {
         if (pdfUri != null) {
             showToastShort("Please Wait Uploading Course Material")
-            pb_uploadingCourseMaterial.setOnClickListener { }
-            pb_uploadingCourseMaterial.show()
+            pb_uploadingCourseMaterial?.setOnClickListener { }
+            pb_uploadingCourseMaterial?.show()
 
             val filePath =
                 "CourseMaterial/$teacherFaculty/$teacherDept/${TeacherHomeFragment.currentClassSelected!!.subjectDegree}/${TeacherHomeFragment.currentClassSelected!!.subjectTime}/${TeacherHomeFragment.currentClassSelected!!.subjectBatch}/${TeacherHomeFragment.currentClassSelected!!.subjectGroup}/${TeacherHomeFragment.currentClassSelected!!.subjectCode}"
@@ -259,17 +259,17 @@ class TeacherHomeActivity : AppCompatActivity() {
                     it.result!!.storage.downloadUrl.addOnCompleteListener { downloadUrl ->
                         uploadDownloadUrl(downloadUrl.result.toString(), DBRef_CourseMaterial)
                         showToastShort("Uploaded Course Material Successfully!!!")
-                        tv_chooseCourseMaterial.text = "Choose Course Material"
-                        pb_uploadingCourseMaterial.hide()
+                        tv_chooseCourseMaterial?.text = "Choose Course Material"
+                        pb_uploadingCourseMaterial?.hide()
                     }
                 } else {
-                    tv_chooseCourseMaterial.text = "Choose Course"
+                    tv_chooseCourseMaterial?.text = "Choose Course"
                     showToastShort("Failed To Upload Course Material\nTry Again!!")
-                    pb_uploadingCourseMaterial.hide()
+                    pb_uploadingCourseMaterial?.hide()
                 }
             }
         } else {
-            tv_chooseCourseMaterial.text = "Choose Course Material"
+            tv_chooseCourseMaterial?.text = "Choose Course Material"
             showToastShort("Please Select A PDF File First Than Click Upload")
         }
     }

@@ -20,7 +20,7 @@ import kotlinx.android.synthetic.main.fragment_teacher_uploadassignment.btn_uplo
 
 class TeacherUploadResults : Fragment() {
 
-    var downloadUrl = "";
+    var downloadUrl = ""
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -49,13 +49,13 @@ class TeacherUploadResults : Fragment() {
             }
         }
 
-        tv_chooseResult.setOnClickListener {
+        tv_chooseResult?.setOnClickListener {
             (activity as TeacherHomeActivity).selectPdfFromFiles()
         }
     }
 
     private fun getDownloadUrlIfAvaiable(ref: DatabaseReference) {
-        tv_resultName.text = TeacherHomeFragment.currentClassSelected!!.subjectName
+        tv_resultName?.text = TeacherHomeFragment.currentClassSelected!!.subjectName
         val baseRefForStoringClassInformation = ref
             .child(TeacherHomeActivity.teacherFaculty)
             .child(TeacherHomeActivity.teacherDept)
