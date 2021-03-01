@@ -26,16 +26,18 @@ class YoutubeLecturesFragment : Fragment() {
 
         btn_upload_youtube_link.setOnClickListener {
 
-            (activity as TeacherHomeActivity).uploadYoutubeLink()
 
-//            var link = et_YoutubeLink.text.toString();
-//
-//            if(link.isEmpty()){
-//                Toast.makeText(requireContext(), "Link Should Not Be Empty", Toast.LENGTH_SHORT).show()
-//            }else{
-//                Toast.makeText(requireContext(), "Uploading Link...", Toast.LENGTH_SHORT).show()
-//
-//            }
+            var link = et_YoutubeLink.text.toString();
+            var title = et_title.text.toString();
+
+            if(link.isEmpty() || title.isEmpty()){
+                Toast.makeText(requireContext(), "Link Should Not Be Empty", Toast.LENGTH_SHORT).show()
+            }else{
+
+                (activity as TeacherHomeActivity).uploadYoutubeLink(link , title);
+                et_YoutubeLink.setText("");
+                et_title.setText("");
+            }
         }
     }
 }

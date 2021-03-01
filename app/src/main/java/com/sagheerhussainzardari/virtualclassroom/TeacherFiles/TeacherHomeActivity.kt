@@ -275,8 +275,25 @@ class TeacherHomeActivity : AppCompatActivity() {
         }
     }
 
-    fun uploadYoutubeLink() {
-        showToastShort("uploading link");
+    fun uploadYoutubeLink(link: String , title: String) {
+
+        val baseRefForStoringClassInformation = DBRef_LECTURES
+            .child(TeacherHomeActivity.teacherFaculty)
+            .child(TeacherHomeActivity.teacherDept)
+            .child(TeacherHomeFragment.currentClassSelected!!.subjectDegree.toUpperCase())
+            .child(TeacherHomeFragment.currentClassSelected!!.subjectTime)
+            .child(TeacherHomeFragment.currentClassSelected!!.subjectBatch.toUpperCase())
+            .child(TeacherHomeFragment.currentClassSelected!!.subjectGroup.toUpperCase())
+            .child(TeacherHomeFragment.currentClassSelected!!.subjectCode)
+
+       var itemPath =  baseRefForStoringClassInformation.push()
+
+        itemPath.child("title").setValue(title)
+        itemPath.child("link").setValue(link)
+
+
+        showToastShort("Youtube Link Uploaded...")
+
     }
 
 

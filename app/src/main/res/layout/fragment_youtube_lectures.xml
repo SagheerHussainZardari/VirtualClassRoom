@@ -22,6 +22,14 @@
         android:textStyle="bold" />
 
     <EditText
+        android:id="@+id/et_title"
+        style="@style/style_edittext_scheduleClass"
+        android:hint="Enter Lecture Title"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp" />
+
+
+    <EditText
         android:id="@+id/et_YoutubeLink"
         style="@style/style_edittext_scheduleClass"
         android:hint="Paste Youtube Link Here..."
@@ -54,5 +62,11 @@
                 android:textSize="20sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_youtube_lectures"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"/>
 
 </LinearLayout>
