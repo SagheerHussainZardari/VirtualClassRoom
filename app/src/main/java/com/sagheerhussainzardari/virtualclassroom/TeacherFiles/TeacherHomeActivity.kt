@@ -69,7 +69,8 @@ class TeacherHomeActivity : AppCompatActivity() {
                 R.id.nav_uploadAttendence,
                 R.id.nav_uploadCourseMaterial,
                 R.id.nav_chatWithStudents,
-                R.id.nav_writeOnNoticeBoard
+                R.id.nav_writeOnNoticeBoard,
+                R.id.nav_youtubeLecturesFragment
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -272,6 +273,10 @@ class TeacherHomeActivity : AppCompatActivity() {
             tv_chooseCourseMaterial?.text = "Choose Course Material"
             showToastShort("Please Select A PDF File First Than Click Upload")
         }
+    }
+
+    fun uploadYoutubeLink() {
+        showToastShort("uploading link");
     }
 
 

@@ -51,6 +51,10 @@ class AfterClassSelectedFragment : Fragment() {
             (activity as TeacherHomeActivity).openFragment(R.id.nav_writeOnNoticeBoard)
         }
 
+        card_UploadYoutubeLectures_AfterClassSelectedTeacher.setOnClickListener {
+            (activity as TeacherHomeActivity).openFragment(R.id.nav_youtubeLecturesFragment)
+        }
+
 
     }
 

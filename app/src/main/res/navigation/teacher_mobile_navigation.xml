@@ -57,6 +57,11 @@
         android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Fragments.WriteOnNoticeBoard"
         android:label="Write On Notice Board"
         tools:layout="@layout/fragment_teacher_write_on_notice_board" />
+    <fragment
+        android:id="@+id/nav_youtubeLecturesFragment"
+        android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Fragments.YoutubeLecturesFragment"
+        android:label="Add New Youtube Lectures"
+        tools:layout="@layout/fragment_youtube_lectures" />
 
 
 </navigation>
