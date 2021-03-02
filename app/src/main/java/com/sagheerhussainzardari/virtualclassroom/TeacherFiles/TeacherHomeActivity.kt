@@ -296,5 +296,14 @@ class TeacherHomeActivity : AppCompatActivity() {
 
     }
 
+    fun openLink(link: String) {
+        this.startActivity(
+            Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse(link)
+            )
+        )
+    }
+
 
 }

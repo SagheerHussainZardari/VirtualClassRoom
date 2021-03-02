@@ -10,6 +10,7 @@ import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Fragments.Teacher
 import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Fragments.YoutubeLecturesFragment
 import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Models.ClassesTaughtByThisTeacherModel
 import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Models.YoutubeLectures
+import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherHomeActivity
 import kotlinx.android.synthetic.main.layout_recycler_teacherclasses.view.*
 import kotlinx.android.synthetic.main.recycler_lecture_view.view.*
 
@@ -33,10 +34,17 @@ public class YoutubeLecturesAdapter(
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-            holder.view.tv_title_lecture.text = list[position].title
-            holder.view.btn_delete_lecture.setOnClickListener {
-                teacherYoutubeLecturesFragment.onLectureDelete(list[position].key)
-            }
+        holder.view.tv_title_lecture.text = list[position].title
+
+        holder.view.btn_delete_lecture.setOnClickListener {
+            teacherYoutubeLecturesFragment.onLectureDelete(list[position].key)
+        }
+
+        holder.view.tv_title_lecture.setOnClickListener {
+            (context as TeacherHomeActivity).openLink(list[position].link)
+        }
+
+
     }
 
 

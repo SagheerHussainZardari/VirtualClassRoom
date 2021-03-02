@@ -39,6 +39,7 @@ public class ClassesTaughtByThisTeacherAdapter(
         holder.view.card_classTeacherHomeFragment.setOnClickListener {
             teacherHomeFragment.setCurrentClassSelected(list[position])
         }
+
     }
 
 

@@ -1,29 +1,25 @@
 package com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Fragments
 
-import android.content.ContentValues.TAG
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.annotation.MainThread
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
-import com.sagheerhussainzardari.easyandroid.showToastShort
 import com.sagheerhussainzardari.virtualclassroom.DBRef_LECTURES
 import com.sagheerhussainzardari.virtualclassroom.R
-import com.sagheerhussainzardari.virtualclassroom.StudentFiles.Adapters.MessageAdapter
-import com.sagheerhussainzardari.virtualclassroom.StudentFiles.Fragments.ChatWithClassFellows
 import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Adapters.YoutubeLecturesAdapter
 import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Models.YoutubeLectures
 import com.sagheerhussainzardari.virtualclassroom.TeacherFiles.TeacherHomeActivity
-import kotlinx.android.synthetic.main.fragment_student_chat_with_class_fellows.*
-import kotlinx.android.synthetic.main.fragment_teacher_scheduleclass.*
 import kotlinx.android.synthetic.main.fragment_youtube_lectures.*
-import kotlin.math.log
+
 
 class YoutubeLecturesFragment : Fragment() {
 
@@ -115,4 +111,5 @@ class YoutubeLecturesFragment : Fragment() {
 
         setUpRecyclerLectures();
     }
+
 }
