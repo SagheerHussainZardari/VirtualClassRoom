@@ -30,15 +30,17 @@ class MessageAdapter(
 
     override fun onBindViewHolder(holder: MessageAdapter.MyViewModel, position: Int) {
 
-        if(listOfMessages[position].rollnumber == StudentHomeActivity.studentRollNumber){
+        if(listOfMessages[position].rollnumber != StudentHomeActivity.studentRollNumber){
+            holder.view.tv_message2.text =
+                listOfMessages[position].rollnumber + "\n" + listOfMessages[position].text
+            holder.view.tv_message1.visibility = View.INVISIBLE
+            holder.view.me.visibility = View.GONE
+
+
+        }else {
             holder.view.tv_message1.text = listOfMessages[position].text
             holder.view.tv_message2.visibility = View.INVISIBLE
             holder.view.other.visibility = View.GONE
-        }else {
-            holder.view.tv_message2.text =
-                StudentHomeActivity.studentRollNumber + "\n" + listOfMessages[position].text
-            holder.view.tv_message1.visibility = View.INVISIBLE
-            holder.view.me.visibility = View.GONE
         }
     }
 }
