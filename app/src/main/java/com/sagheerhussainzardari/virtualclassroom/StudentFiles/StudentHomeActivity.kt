@@ -2,6 +2,7 @@ package com.sagheerhussainzardari.virtualclassroom.StudentFiles
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -56,7 +57,8 @@ class StudentHomeActivity : AppCompatActivity() {
                 R.id.nav_coursesMaterial,
                 R.id.nav_chatWithTeacher,
                 R.id.nav_chatWithClassFellows,
-                R.id.nav_digitalNoticeBoard
+                R.id.nav_digitalNoticeBoard,
+                R.id.nav_previousLecturesFragment
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -122,6 +124,15 @@ class StudentHomeActivity : AppCompatActivity() {
     fun openFragment(fragment: Int) {
         val navController = findNavController(R.id.nav_host_fragment)
         navController.navigate(fragment)
+    }
+
+    fun openLink(link: String) {
+        this.startActivity(
+            Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse(link)
+            )
+        )
     }
 
 }

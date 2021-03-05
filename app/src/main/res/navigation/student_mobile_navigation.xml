@@ -60,6 +60,11 @@
         android:name="com.sagheerhussainzardari.virtualclassroom.StudentFiles.Fragments.DigitalNoticeBoard"
         android:label="Digital Notice Board"
         tools:layout="@layout/fragment_student_digital_notice_board" />
+    <fragment
+        android:id="@+id/nav_previousLecturesFragment"
+        android:name="com.sagheerhussainzardari.virtualclassroom.StudentFiles.Fragments.PreviousLecturesFragment"
+        android:label="Previous Lectures"
+        tools:layout="@layout/fragment_previous_lectures" />
 
 
 </navigation>

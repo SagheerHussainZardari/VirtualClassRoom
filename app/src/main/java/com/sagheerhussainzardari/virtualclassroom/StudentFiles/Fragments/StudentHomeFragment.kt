@@ -59,6 +59,11 @@ class StudentHomeFragment : Fragment() {
         card_digital_notice_board.setOnClickListener {
             (activity as StudentHomeActivity).openFragment(R.id.nav_digitalNoticeBoard)
         }
+
+        card_student_lectures.setOnClickListener {
+            (activity as StudentHomeActivity).openFragment(R.id.nav_previousLecturesFragment)
+
+        }
     }
 
 }
