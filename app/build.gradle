@@ -57,6 +57,7 @@ dependencies {
 
     implementation 'com.google.android.material:material:1.1.0'
 
+    //Library Created By Sagheer Hussain Zardari
     implementation 'com.github.SagheerHussainZardari:EasyAndroid:2.0.10'
 
     implementation 'de.hdodenhof:circleimageview:3.1.0'

@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
@@ -67,10 +68,12 @@ class TeacherHomeActivity : AppCompatActivity() {
                 R.id.nav_teacherUploadAssignmentFragment,
                 R.id.nav_teacherUploadResults,
                 R.id.nav_uploadAttendence,
+                R.id.nav_teacherLogoutFragment,
                 R.id.nav_uploadCourseMaterial,
                 R.id.nav_chatWithStudents,
                 R.id.nav_writeOnNoticeBoard,
-                R.id.nav_youtubeLecturesFragment
+                R.id.nav_youtubeLecturesFragment,
+                R.id.nav_logoutTecher
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

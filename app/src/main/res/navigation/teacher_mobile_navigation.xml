@@ -13,11 +13,6 @@
         android:label="Home"
         tools:layout="@layout/fragment_teacher_home" />
     <fragment
-        android:id="@+id/nav_teacherLogoutFragment"
-        android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Fragments.TeacherLogoutFragment"
-        android:label="Logout"
-        tools:layout="@layout/fragment_teacher_logout" />
-    <fragment
         android:id="@+id/nav_teacherAfterClassSelectedFragment"
         android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Fragments.AfterClassSelectedFragment"
         android:label="Class Dashboard"
@@ -62,6 +57,19 @@
         android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Fragments.YoutubeLecturesFragment"
         android:label="Add New Youtube Lectures"
         tools:layout="@layout/fragment_youtube_lectures" />
+    <navigation android:id="@+id/navigation"
+        app:startDestination="@id/nav_teacherLogoutFragment">
+        <fragment
+            android:id="@+id/nav_teacherLogoutFragment"
+            android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Fragments.TeacherLogoutFragment"
+            android:label="Logout"
+            tools:layout="@layout/fragment_teacher_logout" />
+    </navigation>
+    <fragment
+        android:id="@+id/nav_logoutTecher"
+        android:name="com.sagheerhussainzardari.virtualclassroom.TeacherFiles.Fragments.LogoutTeacher2Fragment"
+        android:label="Logout"
+        tools:layout="@layout/fragment_logout_teacher2" />
 
 
 </navigation>

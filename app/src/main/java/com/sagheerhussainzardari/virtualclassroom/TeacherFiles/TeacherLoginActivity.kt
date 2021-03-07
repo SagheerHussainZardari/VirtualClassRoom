@@ -3,6 +3,7 @@ package com.sagheerhussainzardari.virtualclassroom.TeacherFiles
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -30,7 +31,6 @@ class TeacherLoginActivity : AppCompatActivity(), AuthCallBack {
         setContentView(R.layout.activity_teacher_login)
     }
 
-
     fun onBtnLogin_TeacherLoginActivityClicked(view: View) {
         pb_teacherLoginActvity.show()
         loginWithValidation(
@@ -45,7 +45,6 @@ class TeacherLoginActivity : AppCompatActivity(), AuthCallBack {
         startActivity(Intent(this, StartScreenActivity::class.java))
     }
 
-
     override fun onLoginSuccess() {
         getTeacherDataFromDataBase(
             et_email_loginTeacher.text.toString().substringBefore('@').toLowerCase()
@@ -53,6 +52,7 @@ class TeacherLoginActivity : AppCompatActivity(), AuthCallBack {
     }
 
     private fun getTeacherDataFromDataBase(email: String) {
+
         DBRef_Teachers.child(email).addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onCancelled(error: DatabaseError) {
                 onDataGetFailure(error.toString())

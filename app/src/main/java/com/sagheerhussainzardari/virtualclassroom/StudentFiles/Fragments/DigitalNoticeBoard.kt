@@ -98,7 +98,7 @@ class DigitalNoticeBoard : Fragment() {
                     if (snapshot.hasChildren()) {
                         tv_currentNote?.text = snapshot.child("note").value.toString();
                     } else {
-                        Toast.makeText(context, "Has No Not", Toast.LENGTH_SHORT).show()
+                        tv_currentNote?.text = "Empty..."
 
                     }
                 }
